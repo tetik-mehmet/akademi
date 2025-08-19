@@ -65,35 +65,39 @@ export default function HakkimizdaPage() {
   return (
     <main id="hakkimizda" className="mx-auto max-w-7xl px-4">
       {/* Hero */}
-      <section className="pt-10 md:pt-14">
-        <div className="relative rounded-3xl p-[1px] bg-gradient-to-r from-orange-500/50 via-rose-500/50 to-orange-500/50 shadow-sm">
-          <div className="relative overflow-hidden rounded-[inherit] border border-black/10 bg-white/80 p-6 md:p-10 ring-1 ring-black/5">
+      <section className=" pt-10 md:pt-14">
+        <div className="relative rounded-3xl">
+          <div className="relative overflow-hidden rounded-[inherit] p-6 md:p-10 min-h-[420px] md:min-h-[520px]">
+            <div className="absolute inset-0 -z-10">
+              <Image
+                src="/teacher.png"
+                alt="TEGA Eğitim Öğretmen ve Öğrenci"
+                fill
+                className="object-cover object-top"
+                priority
+              />
+            </div>
             <div className="pointer-events-none absolute inset-0 -z-10">
               <div className="absolute -left-24 -top-24 h-56 w-56 rounded-full bg-orange-200/60 blur-3xl motion-safe:animate-pulse motion-reduce:animate-none" />
               <div className="absolute -right-16 -bottom-24 h-60 w-60 rounded-full bg-rose-200/60 blur-3xl motion-safe:animate-pulse motion-reduce:animate-none" />
             </div>
 
-            <div className="grid items-center gap-8 md:gap-10 md:grid-cols-2">
+            <div className="grid items-center gap-8 md:gap-10">
               <div className="space-y-4">
                 <SectionKicker>Biz kimiz?</SectionKicker>
                 <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">
                   TEGA Eğitim Ailesi
                 </h1>
                 <Slogan />
-                <p className="text-black/70 text-base md:text-lg">
-                  Çocuklara okuma alışkanlığı kazandıran, okuduğunu anlama ve
-                  hızlı okuma becerilerini güçlendiren, güvenli ve
-                  oyunlaştırılmış bir öğrenme deneyimi tasarlıyoruz.
+                <p className="text-left text-black/70 text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-snug max-w-[52ch]">
+                  Çocuklara okuma alışkanlığı kazandıran,
+                  <br />
+                  okuduğunu anlama ve hızlı okuma becerilerini
+                  <br />
+                  güçlendiren, güvenli ve oyunlaştırılmış bir
+                  <br />
+                  öğrenme deneyimi tasarlıyoruz.
                 </p>
-              </div>
-              <div className="relative h-56 md:h-72">
-                <Image
-                  src="/teacher.png"
-                  alt="TEGA Eğitim Öğretmen ve Öğrenci"
-                  fill
-                  className="object-contain"
-                  priority
-                />
               </div>
             </div>
           </div>
@@ -101,27 +105,39 @@ export default function HakkimizdaPage() {
       </section>
 
       {/* Misyon */}
-      <section id="misyon" className="mt-14 space-y-6">
-        <SectionTitle
-          title="Misyonumuz"
-          subtitle="Küçük yaşlardan itibaren okuma sevgisini kazandırmak ve her öğrencinin metinleri hızlı ve derinlemesine anlayabilmesini sağlamak. Okuma alışkanlığı; akademik başarıya, kültürel zenginliğe ve özgüvene açılan kapıdır."
-        />
-        <div className="grid gap-4 md:grid-cols-3">
-          <PrincipleItem
-            title="Okuma Alışkanlığı"
-            description="Her gün küçük dozlarda sürdürülebilir ve keyifli içeriklerle okuma rutini oluşturuyoruz."
-            icon={<span>📖</span>}
-          />
-          <PrincipleItem
-            title="Hızlı Okuma + Anlama"
-            description="Yalnızca hızlı okumayı değil; metnin ana fikrini, ayrıntılarını ve bağlamını kavramayı birlikte öğretiyoruz."
-            icon={<span>⚡</span>}
-          />
-          <PrincipleItem
-            title="Ölçülebilir Gelişim"
-            description="Yaşa ve seviyeye uygun modüller, düzenli kazanım takibi ve geri bildirimlerle desteklenir."
-            icon={<span>📊</span>}
-          />
+      <section id="misyon" className="mt-14">
+        <div className="grid items-center gap-6 md:grid-cols-2">
+          <div className="space-y-6">
+            <SectionTitle
+              title="Misyonumuz"
+              subtitle="Küçük yaşlardan itibaren okuma sevgisini kazandırmak ve her öğrencinin metinleri hızlı ve derinlemesine anlayabilmesini sağlamak. Okuma alışkanlığı; akademik başarıya, kültürel zenginliğe ve özgüvene açılan kapıdır."
+            />
+            <div className="grid gap-4 sm:grid-cols-2">
+              <PrincipleItem
+                title="Okuma Alışkanlığı"
+                description="Her gün küçük dozlarda sürdürülebilir ve keyifli içeriklerle okuma rutini oluşturuyoruz."
+                icon={<span>📖</span>}
+              />
+              <PrincipleItem
+                title="Hızlı Okuma + Anlama"
+                description="Yalnızca hızlı okumayı değil; metnin ana fikrini, ayrıntılarını ve bağlamını kavramayı birlikte öğretiyoruz."
+                icon={<span>⚡</span>}
+              />
+              <PrincipleItem
+                title="Ölçülebilir Gelişim"
+                description="Yaşa ve seviyeye uygun modüller, düzenli kazanım takibi ve geri bildirimlerle desteklenir."
+                icon={<span>📊</span>}
+              />
+            </div>
+          </div>
+          <div className="relative h-64 md:h-80 lg:h-96">
+            <Image
+              src="/misyon.png"
+              alt="TEGA Eğitim Misyon"
+              fill
+              className="object-contain"
+            />
+          </div>
         </div>
       </section>
 
@@ -165,7 +181,16 @@ export default function HakkimizdaPage() {
           title="Neden TEGA?"
           subtitle="M.E.B. müfredat güncellemelerine uyumlu, paket programlar ve profesyonel eğitmenlerle desteklenen, kısa sürede ölçülebilir gelişim sağlayan bir yapı sunuyoruz."
         />
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-4 relative h-72 md:h-96 lg:h-[28rem] overflow-hidden rounded-3xl ring-1 ring-black/5 shadow-sm">
+          <Image
+            src="/japon.png"
+            alt="Neden TEGA görseli"
+            fill
+            className="object-cover object-top"
+            priority
+          />
+        </div>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <PrincipleItem
             title="Uzman Eğitmenler"
             description="Her yaş grubuna özel eğitim almış profesyonel ekip."

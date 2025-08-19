@@ -52,10 +52,10 @@ export default function Header() {
               Hakkımızda
             </Link>
             <Link
-              href="#program"
+              href="/sayfalar/programlar"
               className="text-sm font-medium text-black/70 hover:text-orange-700"
             >
-              Program
+              Eğitim Programlarımız
             </Link>
             <Link
               href="/sayfalar/ekstra-paketler"

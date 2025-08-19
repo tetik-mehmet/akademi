@@ -60,16 +60,16 @@ export default function Footer() {
                 Kurslar
               </Link>
               <Link
-                href="#hakkimizda"
+                href="/sayfalar/hakkimizda"
                 className="text-black/70 hover:text-orange-700"
               >
                 Hakkımızda
               </Link>
               <Link
-                href="#kurslar"
+                href="/sayfalar/programlar"
                 className="text-black/70 hover:text-orange-700"
               >
-                Program
+                Eğitim Programlarımız
               </Link>
               <Link
                 href="/ing-ornek"

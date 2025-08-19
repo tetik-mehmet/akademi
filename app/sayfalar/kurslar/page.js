@@ -89,7 +89,7 @@ export default function Page() {
                 <li>• Günlük tekrar planı</li>
               </ul>
               <Link
-                href="/kayit"
+                href="/ing-ornek"
                 className="mt-5 inline-block text-sm font-semibold text-emerald-700 hover:text-emerald-800"
               >
                 Ünite Örneği
