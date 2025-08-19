@@ -11,11 +11,11 @@ export default function Home() {
             {/* TEGA Logo */}
             <div className="mb-6 flex justify-center md:justify-start">
               <Image
-                src="/LOGO4.png"
+                src="/deneme.png"
                 alt="TEGA - Türkiye Eğitim ve Gelişim Akademisi"
-                width={120}
-                height={120}
-                className="h-24 w-auto"
+                width={220}
+                height={220}
+                className="h-44 w-auto rounded-3xl"
               />
             </div>
             <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-orange-600/20 bg-orange-50 px-3 py-1 text-xs font-medium text-orange-700">

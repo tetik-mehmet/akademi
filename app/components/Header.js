@@ -19,7 +19,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
             <Image
-              src="/LOGO4.png"
+              src="/deneme.png"
               alt="TEGA - Türkiye Eğitim ve Gelişim Akademisi"
               width={40}
               height={40}
