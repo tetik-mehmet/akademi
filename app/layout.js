@@ -1,6 +1,7 @@
 import { Nunito } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const nunito = Nunito({
   variable: "--font-nunito",
@@ -11,7 +12,8 @@ const nunito = Nunito({
 
 export const metadata = {
   title: "Tega – Çocuklar için Akıllı Öğrenme",
-  description: "0–17 yaş için sıcak, güvenli ve oyunlaştırılmış öğrenme deneyimi.",
+  description:
+    "0–17 yaş için sıcak, güvenli ve oyunlaştırılmış öğrenme deneyimi.",
 };
 
 export default function RootLayout({ children }) {
@@ -22,6 +24,7 @@ export default function RootLayout({ children }) {
       >
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

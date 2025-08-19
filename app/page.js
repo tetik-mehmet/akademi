@@ -307,51 +307,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Program / CTA */}
-      <section id="program" className="py-14">
-        <div className="mx-auto max-w-7xl px-4">
-          <div className="grid items-center gap-8 rounded-2xl border border-black/10 bg-gradient-to-r from-orange-50 to-rose-50 p-8 md:grid-cols-2">
-            <div>
-              <h3 className="text-xl font-semibold">Bugün başlayın</h3>
-              <p className="mt-2 text-black/70">
-                İlk hafta ücretsiz. İstediğiniz zaman iptal edebilirsiniz. Kayıt
-                sonrası seviye belirleme testi ile kişisel planınız oluşur.
-              </p>
-              <div className="mt-5 flex flex-wrap items-center gap-3">
-                <Link
-                  href="/kayit"
-                  className="rounded-full bg-gradient-to-r from-orange-500 to-rose-500 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:shadow-md hover:brightness-105"
-                >
-                  Ücretsiz Dene
-                </Link>
-                <Link
-                  href="#iletisim"
-                  className="rounded-full border border-orange-200 px-5 py-3 text-sm font-semibold text-orange-700 transition hover:border-orange-300 hover:text-orange-800"
-                >
-                  Bize Sorun
-                </Link>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 gap-3">
-              {[
-                { k: "Günlük", v: "15 dk" },
-                { k: "İlerleme", v: "Haftalık rapor" },
-                { k: "Cihaz", v: "Web + Mobil" },
-                { k: "Destek", v: "Ebeveyn rehberi" },
-              ].map((it, i) => (
-                <div
-                  key={i}
-                  className="rounded-xl border border-black/10 bg-white p-4"
-                >
-                  <p className="text-xs text-black/60">{it.k}</p>
-                  <p className="text-sm font-semibold">{it.v}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Sabit CTA: Örnek Etkinlik */}
       <div className="fixed bottom-6 right-6 z-50 animate-bounce">
         <Link

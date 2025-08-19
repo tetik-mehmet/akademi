@@ -46,7 +46,7 @@ export default function Header() {
               Kurslar
             </Link>
             <Link
-              href="#hakkimizda"
+              href="/sayfalar/hakkimizda"
               className="text-sm font-medium text-black/70 hover:text-orange-700"
             >
               Hakkımızda
@@ -117,7 +117,7 @@ export default function Header() {
                 Kurslar
               </Link>
               <Link
-                href="#hakkimizda"
+                href="/sayfalar/hakkimizda"
                 className="rounded-md px-2 py-2 text-sm font-medium hover:bg-orange-50"
               >
                 Hakkımızda
