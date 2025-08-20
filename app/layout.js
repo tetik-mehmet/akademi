@@ -15,7 +15,7 @@ export const metadata = {
   description:
     "0–17 yaş için sıcak, güvenli ve oyunlaştırılmış öğrenme deneyimi.",
   icons: {
-    icon: "/deneme.png",
+    icon: "/deneme.png?v=2",
   },
 };
 
