@@ -186,6 +186,12 @@ export default function Home() {
                 <li>• Anlama soruları ile pekiştirme</li>
                 <li>• Haftalık gelişim raporu</li>
               </ul>
+              <img
+                src="/reading.gif"
+                alt="Hızlı okuma çalışma örneği"
+                className="mt-4 mx-auto w-full max-w-[260px] md:max-w-[320px] rounded-3xl border border-black/10 shadow-sm"
+                loading="lazy"
+              />
               <Link
                 href="/kayit"
                 className="mt-5 inline-block text-base font-semibold text-rose-700 hover:text-rose-800"
@@ -211,6 +217,12 @@ export default function Home() {
                 <li>• Sesli/ görsel dikkat çalışmaları</li>
                 <li>• Günlük mini rutinler</li>
               </ul>
+              <img
+                src="/target.gif"
+                alt="Odak çalışma örneği"
+                className="mt-4 mx-auto w-full max-w-[260px] md:max-w-[320px] rounded-3xl border border-black/10 shadow-sm"
+                loading="lazy"
+              />
               <Link
                 href="/kayit"
                 className="mt-5 inline-block text-base font-semibold text-orange-700 hover:text-orange-800"
@@ -236,6 +248,12 @@ export default function Home() {
                 <li>• Sesli telaffuz alıştırmaları</li>
                 <li>• Günlük tekrar planı</li>
               </ul>
+              <img
+                src="/english.gif"
+                alt="Temel İngilizce çalışma örneği"
+                className="mt-4 mx-auto w-full max-w-[260px] md:max-w-[320px] rounded-3xl border border-black/10 shadow-sm"
+                loading="lazy"
+              />
               <Link
                 href="/ing-ornek"
                 className="mt-5 inline-block text-base font-semibold text-amber-700 hover:text-amber-800"
