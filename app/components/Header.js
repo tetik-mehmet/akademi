@@ -57,7 +57,12 @@ export default function Header() {
             >
               Eğitim Programlarımız
             </Link>
-
+            <Link
+              href="/sayfalar/ekstra-paketler"
+              className="text-sm font-medium text-black/70 hover:text-orange-700"
+            >
+              Paketlerimiz
+            </Link>
             <Link
               href="/sayfalar/iletisim"
               className="text-sm font-medium text-black/70 hover:text-orange-700"
@@ -124,10 +129,10 @@ export default function Header() {
                 Program
               </Link>
               <Link
-                href="/sayfalar/ekstra-paketler"
+                href="/sayfalar/programlar"
                 className="rounded-md px-2 py-2 text-sm font-medium hover:bg-orange-50"
               >
-                Ekstra Paketlerimiz
+                Eğitim Paketlerimiz
               </Link>
               <Link
                 href="/sayfalar/iletisim"
