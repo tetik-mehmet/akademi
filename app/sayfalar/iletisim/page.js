@@ -2,7 +2,7 @@ export default function Page() {
   const phoneDisplay = "+90 312 999 98 07";
   const phoneHref = "tel:+903129999807";
   const whatsappHref =
-    "https://wa.me/903129999807?text=Merhaba%20Tega%20Akademi%2C%20bilgi%20almak%20istiyorum.";
+    "https://wa.me/905443177895?text=Merhaba%20Tega%20Akademi%2C%20bilgi%20almak%20istiyorum.";
   const address = "Bağlıca Mahallesi Hilal Caddesi 13/2 Etimesgut/ANKARA";
   const mapsEmbedSrc =
     "https://www.google.com/maps?q=Ba%C4%9Fl%C4%B1ca%20Mahallesi%20Hilal%20Caddesi%2013%2F2%20Etimesgut%2FANKARA&hl=tr&z=16&output=embed";

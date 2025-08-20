@@ -85,7 +85,7 @@ export default function Footer() {
             <h3 className="text-sm font-semibold text-black/80">İletişim</h3>
             <div className="mt-3 space-y-2 text-sm text-black/70">
               <a
-                href="https://wa.me/903129999807?text=Merhaba%20Tega%20Akademi%2C%20bilgi%20almak%20istiyorum."
+                href="https://wa.me/905443177895?text=Merhaba%20Tega%20Akademi%2C%20bilgi%20almak%20istiyorum."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 hover:text-green-700"

@@ -38,6 +38,12 @@ export default function Page() {
                 <li>• Anlama soruları ile pekiştirme</li>
                 <li>• Haftalık gelişim raporu</li>
               </ul>
+              <img
+                src="/reading.gif"
+                alt="Hızlı okuma çalışma örneği"
+                className="mt-4 mx-auto w-full max-w-[260px] md:max-w-[320px] rounded-3xl border border-black/10 shadow-sm"
+                loading="lazy"
+              />
               <Link
                 href="/kayit"
                 className="mt-5 inline-block text-sm font-semibold text-violet-700 hover:text-violet-800"
@@ -63,11 +69,17 @@ export default function Page() {
                 <li>• Sesli/görsel dikkat çalışmaları</li>
                 <li>• Günlük mini rutinler</li>
               </ul>
+              <img
+                src="/target.gif"
+                alt="Odak çalışma örneği"
+                className="mt-4 mx-auto w-full max-w-[260px] md:max-w-[320px] rounded-3xl border border-black/10 shadow-sm"
+                loading="lazy"
+              />
               <Link
                 href="/kayit"
                 className="mt-5 inline-block text-sm font-semibold text-cyan-700 hover:text-cyan-800"
               >
-                Dersleri Gör
+                Programa Katıl
               </Link>
             </div>
 
@@ -88,6 +100,12 @@ export default function Page() {
                 <li>• Sesli telaffuz alıştırmaları</li>
                 <li>• Günlük tekrar planı</li>
               </ul>
+              <img
+                src="/english.gif"
+                alt="Temel İngilizce çalışma örneği"
+                className="mt-4 mx-auto w-full max-w-[260px] md:max-w-[320px] rounded-3xl border border-black/10 shadow-sm"
+                loading="lazy"
+              />
               <Link
                 href="/ing-ornek"
                 className="mt-5 inline-block text-sm font-semibold text-emerald-700 hover:text-emerald-800"

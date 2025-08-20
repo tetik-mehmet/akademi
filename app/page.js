@@ -18,7 +18,7 @@ export default function Home() {
                 className="h-44 w-auto rounded-3xl"
               />
             </div>
-            <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-orange-600/20 bg-orange-50 px-3 py-1 text-xs font-medium text-orange-700">
+            <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-orange-600/20 bg-orange-50 px-3 py-1 text-sm font-medium text-orange-700">
               0–17 Yaş İçin Akıllı Öğrenme
             </p>
             <h1 className="text-4xl font-bold tracking-tight md:text-5xl">
@@ -28,7 +28,7 @@ export default function Home() {
               </span>
               , Odak ve Temel İngilizce
             </h1>
-            <p className="mt-4 text-base text-black/70 md:text-lg">
+            <p className="mt-4 text-lg text-black/70 md:text-xl">
               Günlük 15 dakikalık mikro derslerle çocukların okuma hızını
               artırın, odak becerisini güçlendirin ve İngilizce temellerini
               eğlenceli içeriklerle sağlamlaştırın.
@@ -36,18 +36,18 @@ export default function Home() {
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <Link
                 href="https://www.google.com"
-                className="rounded-full bg-gradient-to-r from-orange-500 to-rose-500 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:shadow-md hover:brightness-105"
+                className="rounded-full bg-gradient-to-r from-orange-500 to-rose-500 px-5 py-3 text-base font-semibold text-white shadow-sm transition hover:shadow-md hover:brightness-105"
               >
                 Platforma Giriş
               </Link>
               <Link
                 href="#kurslar"
-                className="rounded-full border border-orange-200 px-5 py-3 text-sm font-semibold text-orange-700 transition hover:border-orange-300 hover:text-orange-800"
+                className="rounded-full border border-orange-200 px-5 py-3 text-base font-semibold text-orange-700 transition hover:border-orange-300 hover:text-orange-800"
               >
                 Kursları İncele
               </Link>
             </div>
-            <div className="mt-6 flex items-center gap-6 text-sm text-black/60">
+            <div className="mt-6 flex items-center gap-6 text-base text-black/60">
               <span>Pedagojik içerik</span>
               <span>Uzmanlarca hazırlanmış program</span>
               <span>Veliler için haftalık rapor</span>
@@ -63,10 +63,10 @@ export default function Home() {
                     ✨
                   </span>
                   <div>
-                    <p className="text-sm font-semibold">
+                    <p className="text-base font-semibold">
                       Kişiselleştirilmiş Yolculuk
                     </p>
-                    <p className="text-xs text-black/60">
+                    <p className="text-sm text-black/60">
                       Seviyeye göre otomatik uyum
                     </p>
                   </div>
@@ -82,15 +82,15 @@ export default function Home() {
               <div className="mt-6 grid grid-cols-3 gap-3 text-center">
                 <div className="rounded-xl border border-black/10 p-3">
                   <p className="text-2xl font-bold">15dk</p>
-                  <p className="text-xs text-black/60">Günlük</p>
+                  <p className="text-sm text-black/60">Günlük</p>
                 </div>
                 <div className="rounded-xl border border-black/10 p-3">
                   <p className="text-2xl font-bold">+10</p>
-                  <p className="text-xs text-black/60">Modül</p>
+                  <p className="text-sm text-black/60">Modül</p>
                 </div>
                 <div className="rounded-xl border border-black/10 p-3">
                   <p className="text-2xl font-bold">%92</p>
-                  <p className="text-xs text-black/60">Veli memnuniyeti</p>
+                  <p className="text-sm text-black/60">Veli memnuniyeti</p>
                 </div>
               </div>
             </div>
@@ -104,17 +104,17 @@ export default function Home() {
           <h2 className="text-center text-2xl font-bold md:text-3xl">
             Yaşa Uygun Öğrenme Yolları
           </h2>
-          <p className="mx-auto mt-2 max-w-2xl text-center text-black/70">
+          <p className="mx-auto mt-2 max-w-2xl text-center text-black/70 text-lg md:text-xl">
             Her yaş aralığına uygun içerikler: oyunlaştırılmış etkinlikler, kısa
             videolar ve etkileşimli alıştırmalar.
           </p>
           <div className="mt-6 flex justify-center">
             <Image
               src="/kid1.png"
-              width={320}
-              height={200}
+              width={480}
+              height={300}
               alt="Kitap okuyan çocuk"
-              className="h-48 w-auto rounded-xl object-cover shadow-sm md:h-64"
+              className="h-56 w-auto rounded-xl object-cover shadow-sm md:h-72"
             />
           </div>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -132,12 +132,14 @@ export default function Home() {
                   <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-orange-600/10 text-lg">
                     {a.emoji}
                   </span>
-                  <p className="font-semibold">{a.title}</p>
+                  <p className="text-base font-semibold md:text-lg">
+                    {a.title}
+                  </p>
                 </div>
-                <p className="mt-2 text-sm text-black/70">{a.desc}</p>
+                <p className="mt-2 text-base text-black/70">{a.desc}</p>
                 <Link
                   href="/kayit"
-                  className="mt-4 inline-block text-sm font-semibold text-orange-700 hover:text-orange-800"
+                  className="mt-4 inline-block text-base font-semibold text-orange-700 hover:text-orange-800"
                 >
                   Planı Gör
                 </Link>
@@ -153,14 +155,14 @@ export default function Home() {
           <div className="flex items-end justify-between gap-4">
             <div>
               <h2 className="text-2xl font-bold md:text-3xl">Kurslarımız</h2>
-              <p className="mt-2 max-w-2xl text-black/70">
+              <p className="mt-2 max-w-2xl text-black/70 text-lg md:text-xl">
                 Tega üç temel beceriye odaklanır. Her biri kısa, ölçülebilir ve
                 eğlenceli oturumlar içerir.
               </p>
             </div>
             <Link
               href="/kayit"
-              className="hidden rounded-full border border-black/10 px-4 py-2 text-sm font-semibold hover:border-black/30 md:inline-block"
+              className="hidden rounded-full border border-black/10 px-4 py-2 text-base font-semibold hover:border-black/30 md:inline-block"
             >
               Ücretsiz Deneme
             </Link>
@@ -175,18 +177,18 @@ export default function Home() {
                 </span>
                 <p className="text-lg font-semibold">Hızlı Okuma</p>
               </div>
-              <p className="mt-2 text-sm text-black/70">
+              <p className="mt-2 text-base text-black/70">
                 Göz kası egzersizleri, satır takibi, hız ve anlama denge
                 çalışmaları.
               </p>
-              <ul className="mt-4 space-y-2 text-sm text-black/80">
+              <ul className="mt-4 space-y-2 text-base text-black/80">
                 <li>• Metronomlu ritim çalışmaları</li>
                 <li>• Anlama soruları ile pekiştirme</li>
                 <li>• Haftalık gelişim raporu</li>
               </ul>
               <Link
                 href="/kayit"
-                className="mt-5 inline-block text-sm font-semibold text-rose-700 hover:text-rose-800"
+                className="mt-5 inline-block text-base font-semibold text-rose-700 hover:text-rose-800"
               >
                 Programa Katıl
               </Link>
@@ -200,20 +202,20 @@ export default function Home() {
                 </span>
                 <p className="text-lg font-semibold">Odak</p>
               </div>
-              <p className="mt-2 text-sm text-black/70">
+              <p className="mt-2 text-base text-black/70">
                 Dikkat süresini artıran oyunlaştırılmış egzersizler ve nefes
                 teknikleri.
               </p>
-              <ul className="mt-4 space-y-2 text-sm text-black/80">
+              <ul className="mt-4 space-y-2 text-base text-black/80">
                 <li>• Zamanlı görevler</li>
                 <li>• Sesli/ görsel dikkat çalışmaları</li>
                 <li>• Günlük mini rutinler</li>
               </ul>
               <Link
                 href="/kayit"
-                className="mt-5 inline-block text-sm font-semibold text-orange-700 hover:text-orange-800"
+                className="mt-5 inline-block text-base font-semibold text-orange-700 hover:text-orange-800"
               >
-                Dersleri Gör
+                Programa Katıl
               </Link>
             </div>
 
@@ -225,18 +227,18 @@ export default function Home() {
                 </span>
                 <p className="text-lg font-semibold">Temel İngilizce</p>
               </div>
-              <p className="mt-2 text-sm text-black/70">
+              <p className="mt-2 text-base text-black/70">
                 Kelime, telaffuz ve basit dilbilgisi; kısa videolar ve
                 alıştırmalarla.
               </p>
-              <ul className="mt-4 space-y-2 text-sm text-black/80">
+              <ul className="mt-4 space-y-2 text-base text-black/80">
                 <li>• Görsel destekli kelime çalışmaları</li>
                 <li>• Sesli telaffuz alıştırmaları</li>
                 <li>• Günlük tekrar planı</li>
               </ul>
               <Link
                 href="/ing-ornek"
-                className="mt-5 inline-block text-sm font-semibold text-amber-700 hover:text-amber-800"
+                className="mt-5 inline-block text-base font-semibold text-amber-700 hover:text-amber-800"
               >
                 Ünite Örneği
               </Link>
@@ -260,7 +262,7 @@ export default function Home() {
           <div className="grid gap-8 md:grid-cols-2">
             <div>
               <h3 className="text-xl font-semibold">Aile Dostu ve Güvenli</h3>
-              <p className="mt-2 text-black/70">
+              <p className="mt-2 text-black/70 text-lg md:text-xl">
                 İçeriklerimiz çocuk gelişimi uzmanları tarafından gözden
                 geçirilir. Reklamsız, güvenli ve odaklı bir öğrenme ortamı
                 sunarız.
@@ -268,15 +270,15 @@ export default function Home() {
               <div className="mt-6 grid grid-cols-3 gap-3">
                 <div className="rounded-xl border border-black/10 bg-white p-4 text-center">
                   <p className="text-2xl font-bold">%100</p>
-                  <p className="text-xs text-black/60">Reklamsız</p>
+                  <p className="text-sm text-black/60">Reklamsız</p>
                 </div>
                 <div className="rounded-xl border border-black/10 bg-white p-4 text-center">
                   <p className="text-2xl font-bold">Haftalık</p>
-                  <p className="text-xs text-black/60">Veli Raporu</p>
+                  <p className="text-sm text-black/60">Veli Raporu</p>
                 </div>
                 <div className="rounded-xl border border-black/10 bg-white p-4 text-center">
                   <p className="text-2xl font-bold">Seviye</p>
-                  <p className="text-xs text-black/60">Uyarlamalı</p>
+                  <p className="text-sm text-black/60">Uyarlamalı</p>
                 </div>
               </div>
             </div>
@@ -284,20 +286,20 @@ export default function Home() {
               <h4 className="font-semibold">Veliler ne diyor?</h4>
               <div className="mt-4 space-y-4">
                 <figure className="rounded-xl border border-black/10 p-4">
-                  <blockquote className="text-sm text-black/80">
+                  <blockquote className="text-base text-black/80">
                     “Kızımın okuma hızı gözle görülür şekilde arttı. Günlük 15
                     dakika ile bile çok fayda sağladık.”
                   </blockquote>
-                  <figcaption className="mt-2 text-xs text-black/50">
+                  <figcaption className="mt-2 text-sm text-black/50">
                     — Ayşe K., 9 yaş velisi
                   </figcaption>
                 </figure>
                 <figure className="rounded-xl border border-black/10 p-4">
-                  <blockquote className="text-sm text-black/80">
+                  <blockquote className="text-base text-black/80">
                     “Odak egzersizleri ödev saatlerini çok daha verimli hale
                     getirdi. Tavsiye ederim.”
                   </blockquote>
-                  <figcaption className="mt-2 text-xs text-black/50">
+                  <figcaption className="mt-2 text-sm text-black/50">
                     — Mehmet T., 12 yaş velisi
                   </figcaption>
                 </figure>
@@ -312,7 +314,7 @@ export default function Home() {
         <Link
           href="/ornek"
           aria-label="Örnek Etkinliğimizi Dene"
-          className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-rose-500 to-orange-500 px-5 py-3 text-sm font-semibold text-white shadow-xl ring-2 ring-rose-300/40 transition hover:brightness-110 md:text-base"
+          className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-rose-500 to-orange-500 px-5 py-3 text-base font-semibold text-white shadow-xl ring-2 ring-rose-300/40 transition hover:brightness-110 md:text-lg"
         >
           <span>Örnek Etkinliğimizi Dene</span>
           <span className="transition-transform group-hover:translate-x-0.5">
@@ -323,7 +325,7 @@ export default function Home() {
 
       {/* Sabit WhatsApp İkonu */}
       <a
-        href="https://wa.me/903129999807?text=Merhaba%20Tega%20Akademi%2C%20bilgi%20almak%20istiyorum."
+        href="https://wa.me/905443177895?text=Merhaba%20Tega%20Akademi%2C%20bilgi%20almak%20istiyorum."
         target="_blank"
         rel="noopener noreferrer"
         aria-label="WhatsApp ile yaz"

@@ -132,7 +132,7 @@ export default function Header() {
                 href="/sayfalar/programlar"
                 className="rounded-md px-2 py-2 text-sm font-medium hover:bg-orange-50"
               >
-                Eğitim Paketlerimiz
+                Eğitim Programlarımız
               </Link>
               <Link
                 href="/sayfalar/iletisim"
