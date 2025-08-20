@@ -14,9 +14,6 @@ export const metadata = {
   title: "Tega – Çocuklar için Akıllı Öğrenme",
   description:
     "0–17 yaş için sıcak, güvenli ve oyunlaştırılmış öğrenme deneyimi.",
-  icons: {
-    icon: "/deneme.png?v=2",
-  },
 };
 
 export default function RootLayout({ children }) {
