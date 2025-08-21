@@ -61,28 +61,27 @@ export default function Home() {
           <div className="relative -mt-4 md:-mt-6">
             <div className="pointer-events-none absolute -left-20 -top-20 h-56 w-56 rounded-full bg-orange-200/50 blur-3xl md:-left-10 md:-top-10"></div>
             <div className="pointer-events-none absolute -bottom-10 -right-10 h-56 w-56 rounded-full bg-rose-200/50 blur-3xl"></div>
-            <div className="relative overflow-hidden rounded-2xl border border-black/10 bg-white/80 p-6 shadow-sm">
+            <div className="relative overflow-hidden rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
               <Image
                 src="/stairs.png"
                 alt="Arka plan - merdivenler"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover opacity-35 blur-[1px] scale-110"
+                className="object-cover"
                 aria-hidden
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-200/60 via-rose-100/40 to-pink-200/50 mix-blend-multiply"></div>
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-white/70 via-transparent to-white/60"></div>
+              <div className="absolute inset-0 bg-black/20" aria-hidden></div>
               <div className="relative z-10">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-orange-600/10 text-xl">
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15 text-white text-xl">
                       ✨
                     </span>
                     <div>
-                      <p className="text-base font-semibold">
+                      <p className="text-base font-semibold text-white">
                         Kişiselleştirilmiş Yolculuk
                       </p>
-                      <p className="text-sm text-black/60">
+                      <p className="text-sm text-white/80">
                         Seviyeye göre otomatik uyum
                       </p>
                     </div>
@@ -96,17 +95,17 @@ export default function Home() {
                   />
                 </div>
                 <div className="mt-6 grid grid-cols-3 gap-3 text-center">
-                  <div className="rounded-xl border border-black/10 p-3">
-                    <p className="text-2xl font-bold">1 saat</p>
-                    <p className="text-sm text-black/60">Günlük</p>
+                  <div className="rounded-xl border border-white/30 p-3">
+                    <p className="text-2xl font-bold text-white">1 saat</p>
+                    <p className="text-sm text-white/80">Günlük</p>
                   </div>
-                  <div className="rounded-xl border border-black/10 p-3">
-                    <p className="text-2xl font-bold">+10</p>
-                    <p className="text-sm text-black/60">Modül</p>
+                  <div className="rounded-xl border border-white/30 p-3">
+                    <p className="text-2xl font-bold text-white">+10</p>
+                    <p className="text-sm text-white/80">Modül</p>
                   </div>
-                  <div className="rounded-xl border border-black/10 p-3">
-                    <p className="text-2xl font-bold">%92</p>
-                    <p className="text-sm text-black/60">Veli memnuniyeti</p>
+                  <div className="rounded-xl border border-white/30 p-3">
+                    <p className="text-2xl font-bold text-white">%92</p>
+                    <p className="text-sm text-white/80">Veli memnuniyeti</p>
                   </div>
                 </div>
               </div>
