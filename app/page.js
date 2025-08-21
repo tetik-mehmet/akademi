@@ -7,6 +7,44 @@ export default function Home() {
     "https://wa.me/905443177895?text=Merhaba%20Tega%20Akademi%2C%20bilgi%20almak%20istiyorum.";
   const mapsEmbedSrc =
     "https://www.google.com/maps?q=Ba%C4%9Fl%C4%B1ca%20Mahallesi%20Hilal%20Caddesi%2013%2F2%20Etimesgut%2FANKARA&hl=tr&z=16&output=embed";
+  const reviews = [
+    {
+      text: "Kızımın okuma hızı gözle görülür şekilde arttı. Günlük 15 dakika ile bile çok fayda sağladık.",
+      author: "— Ayşe K., 9 yaş velisi",
+    },
+    {
+      text: "Odak egzersizleri ödev saatlerini çok daha verimli hale getirdi. Tavsiye ederim.",
+      author: "— Mehmet T., 12 yaş velisi",
+    },
+    {
+      text: "Platform çok anlaşılır ve eğlenceli, çocuğum her gün kendi kendine açıyor.",
+      author: "— Selin A., 10 yaş velisi",
+    },
+    {
+      text: "Haftalık raporlar sayesinde gelişimi net görüyoruz. Motivasyonu da arttı.",
+      author: "— Murat Y., 13 yaş velisi",
+    },
+    {
+      text: "MOXO testi ve takip görüşmeleri çok faydalı oldu. Odaklanması belirgin şekilde iyileşti.",
+      author: "— Derya B., 11 yaş velisi",
+    },
+    {
+      text: "İngilizce kelime tekrarları telaffuzunu belirgin şekilde geliştirdi.",
+      author: "— Gökhan S., 14 yaş velisi",
+    },
+    {
+      text: "Bireysel ders + platform kombinasyonu çocuğumuza çok iyi geldi.",
+      author: "— Elif D., 8 yaş velisi",
+    },
+    {
+      text: "Öğretmenlerden düzenli geri bildirim almak bizi çok rahatlattı.",
+      author: "— Cenk Ö., 15 yaş velisi",
+    },
+  ];
+  const selectedReviews = reviews
+    .slice()
+    .sort(() => 0.5 - Math.random())
+    .slice(0, 3);
   return (
     <main className="min-h-screen">
       {/* Hero */}
@@ -86,13 +124,6 @@ export default function Home() {
                       </p>
                     </div>
                   </div>
-                  <Image
-                    src="/globe.svg"
-                    width={48}
-                    height={48}
-                    alt="Öğrenme görseli"
-                    className="opacity-70"
-                  />
                 </div>
                 <div className="mt-6 grid grid-cols-3 gap-3 text-center">
                   <div className="rounded-xl border border-white/30 p-3">
@@ -525,24 +556,19 @@ export default function Home() {
                 Veliler ne diyor?
               </h4>
               <div className="mt-4 space-y-4">
-                <figure className="rounded-xl border border-black/10 p-4">
-                  <blockquote className="text-lg text-black/80">
-                    “Kızımın okuma hızı gözle görülür şekilde arttı. Günlük 15
-                    dakika ile bile çok fayda sağladık.”
-                  </blockquote>
-                  <figcaption className="mt-2 text-base text-black/50">
-                    — Ayşe K., 9 yaş velisi
-                  </figcaption>
-                </figure>
-                <figure className="rounded-xl border border-black/10 p-4">
-                  <blockquote className="text-lg text-black/80">
-                    “Odak egzersizleri ödev saatlerini çok daha verimli hale
-                    getirdi. Tavsiye ederim.”
-                  </blockquote>
-                  <figcaption className="mt-2 text-base text-black/50">
-                    — Mehmet T., 12 yaş velisi
-                  </figcaption>
-                </figure>
+                {selectedReviews.map((review, index) => (
+                  <figure
+                    key={index}
+                    className="rounded-xl border border-black/10 p-4"
+                  >
+                    <blockquote className="text-lg text-black/80">
+                      “{review.text}”
+                    </blockquote>
+                    <figcaption className="mt-2 text-base text-black/50">
+                      {review.author}
+                    </figcaption>
+                  </figure>
+                ))}
               </div>
             </div>
           </div>

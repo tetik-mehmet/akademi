@@ -35,7 +35,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="mt-4 max-w-xl text-sm text-black/70">
-              0–17 yaş için güvenli, eğlenceli ve ölçülebilir öğrenme deneyimi.
+              7–17 yaş için güvenli, eğlenceli ve ölçülebilir öğrenme deneyimi.
               Günlük 15 dakikalık içeriklerle okuma, odak ve İngilizce
               temelleri.
             </p>
