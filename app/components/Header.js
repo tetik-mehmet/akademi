@@ -73,7 +73,19 @@ export default function Header() {
               href="/platform"
               className="inline-flex items-center rounded-full bg-gradient-to-r from-orange-600 to-rose-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:from-orange-700 hover:to-rose-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-300"
             >
-              Platforma Giriş
+              <span className="inline-flex items-center gap-1.5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="h-4 w-4"
+                  aria-hidden
+                >
+                  <path d="M11.25 3a.75.75 0 0 1 .75-.75h5.25A2.25 2.25 0 0 1 19.5 4.5v15A2.25 2.25 0 0 1 17.25 21H12a.75.75 0 0 1 0-1.5h5.25a.75.75 0 0 0 .75-.75v-15a.75.75 0 0 0-.75-.75H12a.75.75 0 0 1-.75-.75Z" />
+                  <path d="M12.53 15.28a.75.75 0 0 1-1.06 0l-3-3a.75.75 0 0 1 0-1.06l3-3a.75.75 0 1 1 1.06 1.06L10.31 11H18a.75.75 0 0 1 0 1.5h-7.69l2.22 2.22a.75.75 0 0 1 0 1.06Z" />
+                </svg>
+                <span>Platforma Giriş</span>
+              </span>
             </Link>
           </nav>
 
@@ -160,7 +172,19 @@ export default function Header() {
               href="/platform"
               className="mt-2 rounded-md bg-gradient-to-r from-orange-600 to-rose-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:from-orange-700 hover:to-rose-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-300"
             >
-              Platforma Giriş
+              <span className="inline-flex items-center justify-center gap-1.5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="h-4 w-4"
+                  aria-hidden
+                >
+                  <path d="M11.25 3a.75.75 0 0 1 .75-.75h5.25A2.25 2.25 0 0 1 19.5 4.5v15A2.25 2.25 0 0 1 17.25 21H12a.75.75 0 0 1 0-1.5h5.25a.75.75 0 0 0 .75-.75v-15a.75.75 0 0 0-.75-.75H12a.75.75 0 0 1-.75-.75Z" />
+                  <path d="M12.53 15.28a.75.75 0 0 1-1.06 0l-3-3a.75.75 0 0 1 0-1.06l3-3a.75.75 0 1 1 1.06 1.06L10.31 11H18a.75.75 0 0 1 0 1.5h-7.69l2.22 2.22a.75.75 0 0 1 0 1.06Z" />
+                </svg>
+                <span>Platforma Giriş</span>
+              </span>
             </Link>
           </nav>
         </div>

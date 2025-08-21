@@ -39,11 +39,14 @@ export default function ProgramsPage() {
   ];
 
   return (
-    <main id="program" className="mx-auto max-w-7xl px-4 py-10">
+    <main
+      id="program"
+      className="mx-auto max-w-7xl px-4 py-10 text-xl md:text-2xl"
+    >
       <section className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
         <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
           <div>
-            <h1 className="text-2xl font-bold md:text-3xl">
+            <h1 className="text-4xl font-bold md:text-5xl">
               Eğitim Programlarımız
             </h1>
             <p className="mt-2 max-w-2xl text-black/70">
@@ -61,16 +64,16 @@ export default function ProgramsPage() {
             >
               <div className="flex items-center gap-3">
                 <span
-                  className={`inline-flex h-10 w-10 items-center justify-center rounded-full ${p.badge} text-xl`}
+                  className={`inline-flex h-10 w-10 items-center justify-center rounded-full ${p.badge} text-3xl`}
                   aria-hidden
                 >
                   {p.emoji}
                 </span>
-                <p className="text-base font-semibold">{p.title}</p>
+                <p className="text-xl font-semibold">{p.title}</p>
               </div>
-              <p className="mt-2 text-sm text-black/60">Detaylar yakında.</p>
+              <p className="mt-2 text-lg text-black/60">Detaylar yakında.</p>
               <div className="mt-4">
-                <span className="inline-block rounded-full border border-black/10 px-3 py-1 text-xs font-semibold text-black/70">
+                <span className="inline-block rounded-full border border-black/10 px-3 py-1 text-base font-semibold text-black/70">
                   Yakında Açılıyor
                 </span>
               </div>
@@ -80,7 +83,7 @@ export default function ProgramsPage() {
       </section>
 
       <section className="mt-6 rounded-2xl border border-rose-200 bg-gradient-to-r from-rose-50 to-orange-50 p-6 shadow-sm">
-        <p className="text-sm text-black/70">
+        <p className="text-lg text-black/70">
           Not: Her bir programın müfredatını, hedeflerini ve örnek derslerini
           sizinle birlikte şekillendireceğiz.
         </p>

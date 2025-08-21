@@ -11,7 +11,7 @@ export default function Home() {
     <main className="min-h-screen">
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-b from-orange-50/70 via-rose-50/50 to-transparent">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 md:grid-cols-2 md:py-24">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 md:grid-cols-2 md:py-20">
           <div>
             {/* TEGA Logo */}
             <div className="mb-6 flex justify-center md:justify-start">
@@ -58,44 +58,99 @@ export default function Home() {
               <span>Veliler için haftalık rapor</span>
             </div>
           </div>
-          <div className="relative">
+          <div className="relative -mt-4 md:-mt-6">
             <div className="pointer-events-none absolute -left-20 -top-20 h-56 w-56 rounded-full bg-orange-200/50 blur-3xl md:-left-10 md:-top-10"></div>
             <div className="pointer-events-none absolute -bottom-10 -right-10 h-56 w-56 rounded-full bg-rose-200/50 blur-3xl"></div>
-            <div className="relative rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-orange-600/10 text-xl">
-                    ✨
-                  </span>
-                  <div>
-                    <p className="text-base font-semibold">
-                      Kişiselleştirilmiş Yolculuk
-                    </p>
-                    <p className="text-sm text-black/60">
-                      Seviyeye göre otomatik uyum
-                    </p>
+            <div className="relative overflow-hidden rounded-2xl border border-black/10 bg-white/80 p-6 shadow-sm">
+              <Image
+                src="/stairs.png"
+                alt="Arka plan - merdivenler"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover opacity-35 blur-[1px] scale-110"
+                aria-hidden
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-200/60 via-rose-100/40 to-pink-200/50 mix-blend-multiply"></div>
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-white/70 via-transparent to-white/60"></div>
+              <div className="relative z-10">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-orange-600/10 text-xl">
+                      ✨
+                    </span>
+                    <div>
+                      <p className="text-base font-semibold">
+                        Kişiselleştirilmiş Yolculuk
+                      </p>
+                      <p className="text-sm text-black/60">
+                        Seviyeye göre otomatik uyum
+                      </p>
+                    </div>
+                  </div>
+                  <Image
+                    src="/globe.svg"
+                    width={48}
+                    height={48}
+                    alt="Öğrenme görseli"
+                    className="opacity-70"
+                  />
+                </div>
+                <div className="mt-6 grid grid-cols-3 gap-3 text-center">
+                  <div className="rounded-xl border border-black/10 p-3">
+                    <p className="text-2xl font-bold">1 saat</p>
+                    <p className="text-sm text-black/60">Günlük</p>
+                  </div>
+                  <div className="rounded-xl border border-black/10 p-3">
+                    <p className="text-2xl font-bold">+10</p>
+                    <p className="text-sm text-black/60">Modül</p>
+                  </div>
+                  <div className="rounded-xl border border-black/10 p-3">
+                    <p className="text-2xl font-bold">%92</p>
+                    <p className="text-sm text-black/60">Veli memnuniyeti</p>
                   </div>
                 </div>
-                <Image
-                  src="/globe.svg"
-                  width={48}
-                  height={48}
-                  alt="Öğrenme görseli"
-                  className="opacity-70"
-                />
               </div>
-              <div className="mt-6 grid grid-cols-3 gap-3 text-center">
-                <div className="rounded-xl border border-black/10 p-3">
-                  <p className="text-2xl font-bold">1 saat</p>
-                  <p className="text-sm text-black/60">Günlük</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Öğrenciye Özgü Model - Yeni Bölüm */}
+      <section className="py-8">
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="relative overflow-hidden rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
+            <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+              <div className="flex-1">
+                <h3 className="text-xl md:text-2xl font-semibold">
+                  Bireysel ve Grup Ders İmkanları
+                </h3>
+                <p className="mt-2 text-base md:text-lg text-black/70">
+                  Dijital platform artı bireyselleştirilmiş ders modeli ile
+                  öğrenciye özgü eğitim.
+                </p>
+                <p className="mt-2 text-base md:text-lg text-black/70">
+                  %100 psikolog desteği, MOXO testi ve Turbo Zeka testi ile
+                  dikkatinizi ölçelim.
+                </p>
+              </div>
+              <div className="grid grid-cols-3 gap-3 md:w-[380px]">
+                <div className="rounded-xl border border-black/10 p-4 text-center">
+                  <span className="mx-auto mb-2 inline-flex h-10 w-10 items-center justify-center rounded-full bg-orange-600/10 text-lg">
+                    👩‍🏫
+                  </span>
+                  <p className="text-sm font-medium">Bireysel Ders</p>
                 </div>
-                <div className="rounded-xl border border-black/10 p-3">
-                  <p className="text-2xl font-bold">+10</p>
-                  <p className="text-sm text-black/60">Modül</p>
+                <div className="rounded-xl border border-black/10 p-4 text-center">
+                  <span className="mx-auto mb-2 inline-flex h-10 w-10 items-center justify-center rounded-full bg-rose-600/10 text-lg">
+                    🤝
+                  </span>
+                  <p className="text-sm font-medium">Grup Ders</p>
                 </div>
-                <div className="rounded-xl border border-black/10 p-3">
-                  <p className="text-2xl font-bold">%92</p>
-                  <p className="text-sm text-black/60">Veli memnuniyeti</p>
+                <div className="rounded-xl border border-black/10 p-4 text-center">
+                  <span className="mx-auto mb-2 inline-flex h-10 w-10 items-center justify-center rounded-full bg-amber-600/10 text-lg">
+                    🧠
+                  </span>
+                  <p className="text-sm font-medium">MOXO & Turbo Zeka</p>
                 </div>
               </div>
             </div>
@@ -449,13 +504,15 @@ export default function Home() {
                 geçirilir. Reklamsız, güvenli ve odaklı bir öğrenme ortamı
                 sunarız.
               </p>
-              <div className="mt-6 grid grid-cols-3 gap-3">
+              <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div className="rounded-xl border border-black/10 bg-white p-4 text-center">
                   <p className="text-3xl font-bold">%100</p>
                   <p className="text-base text-black/60">Reklamsız</p>
                 </div>
                 <div className="rounded-xl border border-black/10 bg-white p-4 text-center">
-                  <p className="text-3xl font-bold">Haftalık</p>
+                  <p className="text-2xl md:text-3xl font-bold break-words">
+                    Haftalık
+                  </p>
                   <p className="text-base text-black/60">Veli Raporu</p>
                 </div>
                 <div className="rounded-xl border border-black/10 bg-white p-4 text-center">
