@@ -41,33 +41,39 @@ export default function Header() {
           <nav className="hidden items-center gap-6 md:flex">
             <Link
               href="/sayfalar/kurslar"
-              className="text-sm font-medium text-black/70 hover:text-orange-700"
+              className="text-base font-medium text-black/70 hover:text-orange-700"
             >
               Kurslar
             </Link>
             <Link
               href="/sayfalar/hakkimizda"
-              className="text-sm font-medium text-black/70 hover:text-orange-700"
+              className="text-base font-medium text-black/70 hover:text-orange-700"
             >
               Hakkımızda
             </Link>
             <Link
               href="/sayfalar/programlar"
-              className="text-sm font-medium text-black/70 hover:text-orange-700"
+              className="text-base font-medium text-black/70 hover:text-orange-700"
             >
               Eğitim Programlarımız
             </Link>
             <Link
               href="/sayfalar/ekstra-paketler"
-              className="text-sm font-medium text-black/70 hover:text-orange-700"
+              className="text-base font-medium text-black/70 hover:text-orange-700"
             >
               Paketlerimiz
             </Link>
             <Link
               href="/sayfalar/iletisim"
-              className="text-sm font-medium text-black/70 hover:text-orange-700"
+              className="text-base font-medium text-black/70 hover:text-orange-700"
             >
               İletişim
+            </Link>
+            <Link
+              href="/platform"
+              className="inline-flex items-center rounded-full bg-gradient-to-r from-orange-600 to-rose-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:from-orange-700 hover:to-rose-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-300"
+            >
+              Platforma Giriş
             </Link>
           </nav>
 
@@ -112,33 +118,39 @@ export default function Header() {
             <nav className="flex flex-col gap-2">
               <Link
                 href="/sayfalar/kurslar"
-                className="rounded-md px-2 py-2 text-sm font-medium hover:bg-orange-50"
+                className="rounded-md px-2 py-2 text-base font-medium hover:bg-orange-50"
               >
                 Kurslar
               </Link>
               <Link
                 href="/sayfalar/hakkimizda"
-                className="rounded-md px-2 py-2 text-sm font-medium hover:bg-orange-50"
+                className="rounded-md px-2 py-2 text-base font-medium hover:bg-orange-50"
               >
                 Hakkımızda
               </Link>
               <Link
-                href="#program"
-                className="rounded-md px-2 py-2 text-sm font-medium hover:bg-orange-50"
-              >
-                Program
-              </Link>
-              <Link
                 href="/sayfalar/programlar"
-                className="rounded-md px-2 py-2 text-sm font-medium hover:bg-orange-50"
+                className="rounded-md px-2 py-2 text-base font-medium hover:bg-orange-50"
               >
                 Eğitim Programlarımız
               </Link>
               <Link
+                href="/sayfalar/ekstra-paketler"
+                className="rounded-md px-2 py-2 text-base font-medium hover:bg-orange-50"
+              >
+                Paketlerimiz
+              </Link>
+              <Link
                 href="/sayfalar/iletisim"
-                className="rounded-md px-2 py-2 text-sm font-medium hover:bg-orange-50"
+                className="rounded-md px-2 py-2 text-base font-medium hover:bg-orange-50"
               >
                 İletişim
+              </Link>
+              <Link
+                href="/platform"
+                className="mt-2 rounded-md bg-gradient-to-r from-orange-600 to-rose-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:from-orange-700 hover:to-rose-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-300"
+              >
+                Platforma Giriş
               </Link>
             </nav>
           </div>

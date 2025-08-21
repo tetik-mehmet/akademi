@@ -34,9 +34,9 @@ export default function Home() {
               , Odak ve Temel İngilizce
             </h1>
             <p className="mt-4 text-lg text-black/70 md:text-xl">
-              Günlük 15 dakikalık mikro derslerle çocukların okuma hızını
-              artırın, odak becerisini güçlendirin ve İngilizce temellerini
-              eğlenceli içeriklerle sağlamlaştırın.
+              Günlük 1 saatlik mikro derslerle çocukların okuma hızını artırın,
+              odak becerisini güçlendirin ve İngilizce temellerini eğlenceli
+              içeriklerle sağlamlaştırın.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <Link
@@ -119,33 +119,98 @@ export default function Home() {
               width={480}
               height={300}
               alt="Kitap okuyan çocuk"
-              className="h-56 w-auto rounded-xl object-cover shadow-sm md:h-72"
+              className="w-full max-w-[700px] h-auto rounded-xl object-contain shadow-sm md:max-w-[780px]"
             />
           </div>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+
+          {/* Optimize edilmiş 3 kart grid sistemi */}
+          <div className="mt-8 grid gap-6 sm:grid-cols-1 md:grid-cols-3 max-w-5xl mx-auto">
             {[
-              { title: "6–10 Yaş", desc: "Okuma temelleri", emoji: "📚" },
-              { title: "11–14 Yaş", desc: "Hız & Anlama", emoji: "⚡" },
-              { title: "15–17 Yaş", desc: "Sınav ve odak", emoji: "🎯" },
+              {
+                title: "6–10 Yaş",
+                desc: "Okuma temelleri",
+                emoji: "📚",
+                features: [
+                  "Temel okuma becerileri",
+                  "Görsel hafıza",
+                  "Konsantrasyon",
+                ],
+                color: "from-blue-500 to-cyan-500",
+              },
+              {
+                title: "11–14 Yaş",
+                desc: "Hız & Anlama",
+                emoji: "⚡",
+                features: [
+                  "Hızlı okuma teknikleri",
+                  "Kavrama geliştirme",
+                  "Analiz becerileri",
+                ],
+                color: "from-orange-500 to-amber-500",
+              },
+              {
+                title: "15–17 Yaş",
+                desc: "Sınav ve odak",
+                emoji: "🎯",
+                features: [
+                  "Sınav stratejileri",
+                  "Zaman yönetimi",
+                  "Kritik düşünme",
+                ],
+                color: "from-rose-500 to-pink-500",
+              },
             ].map((a, i) => (
               <div
                 key={i}
-                className="rounded-2xl border border-black/10 bg-white p-5 transition hover:shadow-sm"
+                className="group relative rounded-2xl border border-black/10 bg-white p-6 transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover:border-black/20"
               >
-                <div className="flex items-center gap-3">
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-orange-600/10 text-lg">
+                {/* Gradient border effect */}
+                <div
+                  className="absolute inset-0 rounded-2xl bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-sm"
+                  style={{
+                    background: `linear-gradient(135deg, ${
+                      a.color.split(" ")[1]
+                    }, ${a.color.split(" ")[3]})`,
+                  }}
+                ></div>
+
+                {/* Header */}
+                <div className="flex items-center gap-3 mb-4">
+                  <span
+                    className={`inline-flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br ${a.color} text-white text-xl shadow-sm transition-transform duration-300 group-hover:scale-110`}
+                  >
                     {a.emoji}
                   </span>
-                  <p className="text-base font-semibold md:text-lg">
-                    {a.title}
-                  </p>
+                  <div>
+                    <p className="text-3xl font-bold text-gray-900 group-hover:text-gray-800 transition-colors">
+                      {a.title}
+                    </p>
+                    <p className="text-xl text-gray-600">{a.desc}</p>
+                  </div>
                 </div>
-                <p className="mt-2 text-base text-black/70">{a.desc}</p>
+
+                {/* Features list */}
+                <ul className="space-y-2 mb-6">
+                  {a.features.map((feature, index) => (
+                    <li
+                      key={index}
+                      className="flex items-center gap-2 text-xl text-gray-700"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-orange-400 to-rose-400"></span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+
+                {/* CTA Button */}
                 <Link
                   href="/kayit"
-                  className="mt-4 inline-block text-base font-semibold text-orange-700 hover:text-orange-800"
+                  className="inline-flex items-center gap-2 text-xl font-semibold text-orange-600 hover:text-orange-700 transition-colors duration-200 group-hover:gap-3"
                 >
                   Planı Gör
+                  <span className="transition-transform duration-200 group-hover:translate-x-1">
+                    →
+                  </span>
                 </Link>
               </div>
             ))}
@@ -156,36 +221,83 @@ export default function Home() {
       {/* Ücretsiz Ön Görüşme Duyurusu */}
       <section className="py-8">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="relative overflow-hidden rounded-2xl border border-orange-200 bg-gradient-to-r from-orange-50 to-rose-50 p-6 text-center shadow-sm">
+          <div
+            className="relative overflow-hidden rounded-2xl border border-orange-200 bg-gradient-to-r from-orange-50 to-rose-50 p-6 text-center shadow-sm transition-all duration-700 ease-out hover:shadow-xl hover:scale-[1.02] hover:border-orange-300"
+            style={{
+              animation: "fadeInSlideUp 1s ease-out forwards",
+              opacity: 0,
+              transform: "translateY(30px)",
+            }}
+          >
+            {/* Arka plan animasyonlu daire */}
             <div
-              className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-orange-200/40 blur-3xl"
+              className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-orange-200/40 blur-3xl transition-all duration-1000 ease-out hover:scale-110 hover:bg-orange-300/50"
               aria-hidden
+              style={{
+                animation: "pulse 3s ease-in-out infinite",
+              }}
             ></div>
-            <p className="text-xl font-semibold md:text-2xl">
+
+            {/* Ana başlık - fade-in animasyonu */}
+            <p
+              className="text-xl font-semibold md:text-2xl transition-all duration-500 ease-out hover:text-orange-800"
+              style={{
+                animation: "fadeIn 1.2s ease-out 0.3s forwards",
+                opacity: 0,
+              }}
+            >
               Ücretsiz ön görüşme ve okuma ölçümü için{" "}
-              <span className="bg-gradient-to-r from-orange-600 to-rose-600 bg-clip-text text-transparent">
+              <span
+                className="bg-gradient-to-r from-orange-600 to-rose-600 bg-clip-text text-transparent transition-all duration-500 ease-out hover:from-orange-700 hover:to-rose-700"
+                style={{
+                  animation:
+                    "highlightText 2s ease-in-out 1s infinite alternate",
+                }}
+              >
                 ofisimize bekleriz
               </span>
             </p>
-            <p className="mt-3 text-base text-black/70 md:text-lg">{address}</p>
-            <div className="mt-5 flex justify-center">
+
+            {/* Adres - slide-up animasyonu */}
+            <p
+              className="mt-3 text-base text-black/70 md:text-lg transition-all duration-500 ease-out hover:text-black/90"
+              style={{
+                animation: "slideUp 1s ease-out 0.6s forwards",
+                opacity: 0,
+                transform: "translateY(20px)",
+              }}
+            >
+              {address}
+            </p>
+
+            {/* WhatsApp butonu - bounce-in animasyonu */}
+            <div
+              className="mt-5 flex justify-center"
+              style={{
+                animation: "bounceIn 1s ease-out 0.9s forwards",
+                opacity: 0,
+                transform: "scale(0.8)",
+              }}
+            >
               <a
                 href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-base font-semibold text-white shadow-sm transition hover:brightness-105"
+                className="group inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-base font-semibold text-white shadow-sm transition-all duration-300 ease-out hover:brightness-110 hover:shadow-lg hover:scale-105 hover:bg-[#20D366] active:scale-95"
                 aria-label="WhatsApp ile yazın"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 16 16"
                   fill="currentColor"
-                  className="h-5 w-5"
+                  className="h-5 w-5 transition-transform duration-300 ease-out group-hover:rotate-12"
                   aria-hidden
                 >
                   <path d="M13.601 2.326A7.2 7.2 0 0 0 8.017 0C3.608 0 .063 3.546.063 7.955c0 1.401.367 2.76 1.06 3.967L0 16l4.159-1.095a7.9 7.9 0 0 0 3.858.986h.003c4.409 0 7.955-3.546 7.955-7.955a7.89 7.89 0 0 0-2.334-5.61zM8.02 14.5a6.54 6.54 0 0 1-3.356-.92l-.24-.143-2.477.651.662-2.414-.156-.248A6.53 6.53 0 0 1 1.48 7.955c0-3.608 2.935-6.543 6.544-6.543 1.748 0 3.392.682 4.623 1.914a6.52 6.52 0 0 1 1.914 4.629c0 3.608-2.935 6.545-6.544 6.545zm3.57-4.934c-.195-.098-1.153-.568-1.333-.633-.18-.065-.311-.098-.442.098-.13.195-.506.632-.62.761-.115.13-.23.146-.425.049-.195-.098-.823-.303-1.567-.966-.58-.518-.97-1.158-1.085-1.353-.115-.195-.012-.301.086-.399.089-.088.195-.23.293-.344.098-.115.13-.195.195-.325.065-.13.033-.244-.016-.342-.049-.098-.442-1.068-.606-1.468-.16-.387-.323-.335-.442-.341l-.377-.007c-.13 0-.342.049-.52.244-.18.195-.682.666-.682 1.626s.698 1.885.795 2.015c.098.13 1.374 2.101 3.333 2.949.466.201.83.321 1.114.41.468.149.894.128 1.231.078.375-.056 1.153-.471 1.316-.926.162-.455.162-.846.114-.926-.049-.081-.18-.13-.375-.228z" />
                 </svg>
-                Bize Yazın
+                <span className="transition-all duration-300 ease-out group-hover:translate-x-1">
+                  Bize Yazın
+                </span>
               </a>
             </div>
           </div>
@@ -321,15 +433,6 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="mt-6 flex justify-center">
-            <Image
-              src="/teacher.png"
-              width={360}
-              height={240}
-              alt="Sınıfta öğretmen"
-              className="h-56 w-auto rounded-xl object-cover shadow-sm md:h-72"
-            />
-          </div>
         </div>
       </section>
 
@@ -338,45 +441,49 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid gap-8 md:grid-cols-2">
             <div>
-              <h3 className="text-xl font-semibold">Aile Dostu ve Güvenli</h3>
-              <p className="mt-2 text-black/70 text-lg md:text-xl">
+              <h3 className="text-2xl md:text-3xl font-semibold">
+                Aile Dostu ve Güvenli
+              </h3>
+              <p className="mt-2 text-black/70 text-xl md:text-2xl">
                 İçeriklerimiz çocuk gelişimi uzmanları tarafından gözden
                 geçirilir. Reklamsız, güvenli ve odaklı bir öğrenme ortamı
                 sunarız.
               </p>
               <div className="mt-6 grid grid-cols-3 gap-3">
                 <div className="rounded-xl border border-black/10 bg-white p-4 text-center">
-                  <p className="text-2xl font-bold">%100</p>
-                  <p className="text-sm text-black/60">Reklamsız</p>
+                  <p className="text-3xl font-bold">%100</p>
+                  <p className="text-base text-black/60">Reklamsız</p>
                 </div>
                 <div className="rounded-xl border border-black/10 bg-white p-4 text-center">
-                  <p className="text-2xl font-bold">Haftalık</p>
-                  <p className="text-sm text-black/60">Veli Raporu</p>
+                  <p className="text-3xl font-bold">Haftalık</p>
+                  <p className="text-base text-black/60">Veli Raporu</p>
                 </div>
                 <div className="rounded-xl border border-black/10 bg-white p-4 text-center">
-                  <p className="text-2xl font-bold">Seviye</p>
-                  <p className="text-sm text-black/60">Uyarlamalı</p>
+                  <p className="text-3xl font-bold">Seviye</p>
+                  <p className="text-base text-black/60">Uyarlamalı</p>
                 </div>
               </div>
             </div>
             <div className="rounded-2xl border border-black/10 bg-white p-6">
-              <h4 className="font-semibold">Veliler ne diyor?</h4>
+              <h4 className="text-xl md:text-2xl font-semibold">
+                Veliler ne diyor?
+              </h4>
               <div className="mt-4 space-y-4">
                 <figure className="rounded-xl border border-black/10 p-4">
-                  <blockquote className="text-base text-black/80">
+                  <blockquote className="text-lg text-black/80">
                     “Kızımın okuma hızı gözle görülür şekilde arttı. Günlük 15
                     dakika ile bile çok fayda sağladık.”
                   </blockquote>
-                  <figcaption className="mt-2 text-sm text-black/50">
+                  <figcaption className="mt-2 text-base text-black/50">
                     — Ayşe K., 9 yaş velisi
                   </figcaption>
                 </figure>
                 <figure className="rounded-xl border border-black/10 p-4">
-                  <blockquote className="text-base text-black/80">
+                  <blockquote className="text-lg text-black/80">
                     “Odak egzersizleri ödev saatlerini çok daha verimli hale
                     getirdi. Tavsiye ederim.”
                   </blockquote>
-                  <figcaption className="mt-2 text-sm text-black/50">
+                  <figcaption className="mt-2 text-base text-black/50">
                     — Mehmet T., 12 yaş velisi
                   </figcaption>
                 </figure>

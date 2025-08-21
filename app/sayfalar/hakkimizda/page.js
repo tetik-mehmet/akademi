@@ -8,7 +8,7 @@ export const metadata = {
 
 function SectionKicker({ children }) {
   return (
-    <p className="text-xs font-semibold uppercase tracking-widest text-orange-700/90">
+    <p className="text-sm font-semibold uppercase tracking-widest text-orange-700/90">
       {children}
     </p>
   );
@@ -16,17 +16,15 @@ function SectionKicker({ children }) {
 
 function SectionTitle({ kicker, title, subtitle }) {
   return (
-    <div className="space-y-3">
+    <div className="space-y-4">
       {Boolean(kicker) && <SectionKicker>{kicker}</SectionKicker>}
-      <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">
+      <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
         <span className="bg-gradient-to-r from-orange-600 to-rose-600 bg-clip-text text-transparent">
           {title}
         </span>
       </h2>
       {Boolean(subtitle) && (
-        <p className="text-sm md:text-base text-black/70 max-w-3xl">
-          {subtitle}
-        </p>
+        <p className="text-lg md:text-xl text-black/70 max-w-3xl">{subtitle}</p>
       )}
     </div>
   );
@@ -34,14 +32,14 @@ function SectionTitle({ kicker, title, subtitle }) {
 
 function PrincipleItem({ title, description, icon }) {
   return (
-    <li className="group rounded-xl border border-black/10 bg-white p-4 shadow-sm hover:shadow-md transition">
-      <div className="flex items-start gap-3">
-        <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-orange-600/10 text-orange-700 ring-1 ring-black/5">
+    <li className="group rounded-xl border border-black/10 bg-white p-5 shadow-sm hover:shadow-md transition">
+      <div className="flex items-start gap-4">
+        <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-orange-600/10 text-orange-700 ring-1 ring-black/5 text-xl">
           {icon}
         </span>
-        <div className="space-y-1">
-          <h4 className="text-sm font-semibold text-black/90">{title}</h4>
-          <p className="text-sm text-black/70">{description}</p>
+        <div className="space-y-2">
+          <h4 className="text-lg font-semibold text-black/90">{title}</h4>
+          <p className="text-lg text-black/70">{description}</p>
         </div>
       </div>
     </li>
@@ -50,11 +48,11 @@ function PrincipleItem({ title, description, icon }) {
 
 function Slogan() {
   return (
-    <div className="relative mt-1">
+    <div className="relative mt-2">
       <div className="pointer-events-none absolute inset-0 -z-10 rounded-xl bg-gradient-to-r from-orange-400/30 via-rose-400/30 to-orange-400/30 blur-xl" />
-      <p className="inline-block rounded-xl bg-white/80 px-3 py-2 ring-1 ring-black/5 shadow-sm">
-        <span className="bg-gradient-to-r from-orange-600 via-rose-600 to-orange-600 bg-clip-text text-transparent text-xl md:text-2xl font-extrabold tracking-tight motion-safe:animate-pulse">
-          “Her Kitap, Bir İnsan, Her Cümle, Bir Yaşam!”
+      <p className="inline-block rounded-xl bg-white/80 px-4 py-3 ring-1 ring-black/5 shadow-sm">
+        <span className="bg-gradient-to-r from-orange-600 via-rose-600 to-orange-600 bg-clip-text text-transparent text-2xl md:text-3xl font-extrabold tracking-tight motion-safe:animate-pulse">
+          &ldquo;Her Kitap, Bir İnsan, Her Cümle, Bir Yaşam!&rdquo;
         </span>
       </p>
     </div>
@@ -83,9 +81,9 @@ export default function HakkimizdaPage() {
             </div>
 
             <div className="grid items-center gap-8 md:gap-10">
-              <div className="space-y-4">
+              <div className="space-y-5">
                 <SectionKicker>Biz kimiz?</SectionKicker>
-                <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">
+                <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
                   TEGA Eğitim Ailesi
                 </h1>
                 <Slogan />
@@ -105,14 +103,14 @@ export default function HakkimizdaPage() {
       </section>
 
       {/* Misyon */}
-      <section id="misyon" className="mt-14">
-        <div className="grid items-center gap-6 md:grid-cols-2">
-          <div className="space-y-6">
+      <section id="misyon" className="mt-16">
+        <div className="grid items-center gap-8 md:grid-cols-2">
+          <div className="space-y-8">
             <SectionTitle
               title="Misyonumuz"
               subtitle="Küçük yaşlardan itibaren okuma sevgisini kazandırmak ve her öğrencinin metinleri hızlı ve derinlemesine anlayabilmesini sağlamak. Okuma alışkanlığı; akademik başarıya, kültürel zenginliğe ve özgüvene açılan kapıdır."
             />
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="grid gap-5 sm:grid-cols-2">
               <PrincipleItem
                 title="Okuma Alışkanlığı"
                 description="Her gün küçük dozlarda sürdürülebilir ve keyifli içeriklerle okuma rutini oluşturuyoruz."
@@ -142,29 +140,29 @@ export default function HakkimizdaPage() {
       </section>
 
       {/* Yaklaşım */}
-      <section id="yaklasim" className="mt-14">
+      <section id="yaklasim" className="mt-16">
         <SectionTitle
           kicker="Eğitim Modelimiz"
           title="Okuma ve Anlama Müfredatı"
           subtitle="Kurumsal deneyimimiz, saha gözlemlerimiz ve pedagojik materyallerimizle harmanlanan program; okuma hızını artırırken metinleri tam olarak anlamayı garanti altına alır. Her yaş grubuna özel teknikler uygulanır."
         />
-        <div className="mt-6 grid gap-6 md:grid-cols-2">
-          <div className="rounded-2xl border border-black/10 bg-white p-5 shadow-sm">
-            <h3 className="text-base font-semibold text-black/90">
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
+          <div className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
+            <h3 className="text-xl font-semibold text-black/90">
               Program Bileşenleri
             </h3>
-            <ul className="mt-3 grid gap-2 text-sm text-black/70">
+            <ul className="mt-4 grid gap-3 text-lg text-black/70">
               <li>• Dikkat, odak ve hız egzersizleri</li>
               <li>• Ana fikir, çıkarım ve kavram haritası çalışmaları</li>
               <li>• Yaş gruplarına uygun metinler ve soru türleri</li>
               <li>• Düzenli ölçme-değerlendirme ve raporlama</li>
             </ul>
           </div>
-          <div className="rounded-2xl border border-black/10 bg-white p-5 shadow-sm">
-            <h3 className="text-base font-semibold text-black/90">
+          <div className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
+            <h3 className="text-xl font-semibold text-black/90">
               Neden Bu Yaklaşım?
             </h3>
-            <p className="mt-3 text-sm text-black/70">
+            <p className="mt-4 text-lg text-black/70">
               Günümüzde hızla yayılan okuma ve anlama eğitimleri, çoğu zaman
               yalnızca hız odaklıdır. Biz; metni anlama, yorumlama ve bilgiyi
               hayatla ilişkilendirme becerisini merkeze alırız. Her öğrencinin
@@ -176,12 +174,12 @@ export default function HakkimizdaPage() {
       </section>
 
       {/* Neden TEGA */}
-      <section id="neden-tega" className="mt-14">
+      <section id="neden-tega" className="mt-16">
         <SectionTitle
           title="Neden TEGA?"
           subtitle="M.E.B. müfredat güncellemelerine uyumlu, paket programlar ve profesyonel eğitmenlerle desteklenen, kısa sürede ölçülebilir gelişim sağlayan bir yapı sunuyoruz."
         />
-        <div className="mt-4 relative h-72 md:h-96 lg:h-[28rem] overflow-hidden rounded-3xl ring-1 ring-black/5 shadow-sm">
+        <div className="mt-6 relative h-72 md:h-96 lg:h-[28rem] overflow-hidden rounded-3xl ring-1 ring-black/5 shadow-sm">
           <Image
             src="/japon.png"
             alt="Neden TEGA görseli"
@@ -190,7 +188,7 @@ export default function HakkimizdaPage() {
             priority
           />
         </div>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           <PrincipleItem
             title="Uzman Eğitmenler"
             description="Her yaş grubuna özel eğitim almış profesyonel ekip."
@@ -210,20 +208,20 @@ export default function HakkimizdaPage() {
       </section>
 
       {/* Çağrı */}
-      <section className="my-16">
-        <div className="flex flex-col items-center justify-between gap-5 rounded-2xl border border-black/10 bg-white p-6 shadow-sm md:flex-row">
+      <section className="my-20">
+        <div className="flex flex-col items-center justify-between gap-6 rounded-2xl border border-black/10 bg-white p-8 shadow-sm md:flex-row">
           <div className="max-w-2xl">
-            <h3 className="text-lg font-bold tracking-tight">
+            <h3 className="text-2xl font-bold tracking-tight">
               Çocuklarınız için yeni bir bakış açısı kazandırmak ister misiniz?
             </h3>
-            <p className="mt-1 text-sm text-black/70">
+            <p className="mt-2 text-lg text-black/70">
               Sorularınızı bize iletin; seviyenize uygun program ve örnek ders
               akışını birlikte planlayalım.
             </p>
           </div>
           <a
             href="/sayfalar/iletisim"
-            className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-orange-600 to-rose-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:brightness-110"
+            className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-orange-600 to-rose-600 px-6 py-3 text-lg font-semibold text-white shadow-sm hover:brightness-110"
           >
             İletişime Geçin
           </a>

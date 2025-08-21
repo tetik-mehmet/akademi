@@ -6,10 +6,10 @@ export default function Page() {
       {/* Sayfa Başlığı */}
       <section className="py-12 md:py-16 border-b border-black/10 bg-gray-50/60">
         <div className="mx-auto max-w-7xl px-4">
-          <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
+          <h1 className="text-5xl font-bold tracking-tight md:text-6xl">
             Kurslarımız
           </h1>
-          <p className="mt-2 max-w-2xl text-black/70">
+          <p className="mt-4 max-w-2xl text-xl text-black/70">
             Tega; <strong>Hızlı Okuma</strong>, <strong>Odak</strong> ve{" "}
             <strong>Temel İngilizce</strong> olmak üzere üç temel beceriye
             odaklanır. Kısa, ölçülebilir ve eğlenceli oturumlarla ilerleyin.
@@ -24,16 +24,16 @@ export default function Page() {
             {/* Hızlı Okuma */}
             <div className="rounded-2xl border border-black/10 bg-white p-6">
               <div className="flex items-center gap-3">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-violet-600/10 text-xl">
+                <span className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-violet-600/10 text-3xl">
                   ⚡
                 </span>
-                <p className="text-lg font-semibold">Hızlı Okuma</p>
+                <p className="text-2xl font-semibold">Hızlı Okuma</p>
               </div>
-              <p className="mt-2 text-sm text-black/70">
+              <p className="mt-4 text-lg text-black/70">
                 Göz kası egzersizleri, satır takibi ve hız–anlama dengesini
                 güçlendiren çalışmalar.
               </p>
-              <ul className="mt-4 space-y-2 text-sm text-black/80">
+              <ul className="mt-5 space-y-3 text-lg text-black/80">
                 <li>• Metronomlu ritim çalışmaları</li>
                 <li>• Anlama soruları ile pekiştirme</li>
                 <li>• Haftalık gelişim raporu</li>
@@ -41,12 +41,12 @@ export default function Page() {
               <img
                 src="/reading.gif"
                 alt="Hızlı okuma çalışma örneği"
-                className="mt-4 mx-auto w-full max-w-[260px] md:max-w-[320px] rounded-3xl border border-black/10 shadow-sm"
+                className="mt-5 mx-auto w-full max-w-[260px] md:max-w-[320px] rounded-3xl border border-black/10 shadow-sm"
                 loading="lazy"
               />
               <Link
                 href="/kayit"
-                className="mt-5 inline-block text-sm font-semibold text-violet-700 hover:text-violet-800"
+                className="mt-6 inline-block text-lg font-semibold text-violet-700 hover:text-violet-800"
               >
                 Programa Katıl
               </Link>
@@ -55,16 +55,16 @@ export default function Page() {
             {/* Odak */}
             <div className="rounded-2xl border border-black/10 bg-white p-6">
               <div className="flex items-center gap-3">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-cyan-600/10 text-xl">
+                <span className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-cyan-600/10 text-3xl">
                   🎯
                 </span>
-                <p className="text-lg font-semibold">Odak</p>
+                <p className="text-2xl font-semibold">Odak</p>
               </div>
-              <p className="mt-2 text-sm text-black/70">
+              <p className="mt-4 text-lg text-black/70">
                 Dikkat süresini artıran oyunlaştırılmış egzersizler ve nefes
                 teknikleri.
               </p>
-              <ul className="mt-4 space-y-2 text-sm text-black/80">
+              <ul className="mt-5 space-y-3 text-lg text-black/80">
                 <li>• Zamanlı görevler</li>
                 <li>• Sesli/görsel dikkat çalışmaları</li>
                 <li>• Günlük mini rutinler</li>
@@ -72,12 +72,12 @@ export default function Page() {
               <img
                 src="/target.gif"
                 alt="Odak çalışma örneği"
-                className="mt-4 mx-auto w-full max-w-[260px] md:max-w-[320px] rounded-3xl border border-black/10 shadow-sm"
+                className="mt-5 mx-auto w-full max-w-[260px] md:max-w-[320px] rounded-3xl border border-black/10 shadow-sm"
                 loading="lazy"
               />
               <Link
                 href="/kayit"
-                className="mt-5 inline-block text-sm font-semibold text-cyan-700 hover:text-cyan-800"
+                className="mt-6 inline-block text-lg font-semibold text-cyan-700 hover:text-cyan-800"
               >
                 Programa Katıl
               </Link>
@@ -86,16 +86,16 @@ export default function Page() {
             {/* Temel İngilizce */}
             <div className="rounded-2xl border border-black/10 bg-white p-6">
               <div className="flex items-center gap-3">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-emerald-600/10 text-xl">
+                <span className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-emerald-600/10 text-3xl">
                   🔤
                 </span>
-                <p className="text-lg font-semibold">Temel İngilizce</p>
+                <p className="text-2xl font-semibold">Temel İngilizce</p>
               </div>
-              <p className="mt-2 text-sm text-black/70">
+              <p className="mt-4 text-lg text-black/70">
                 Kelime, telaffuz ve basit dilbilgisi; kısa videolar ve
                 etkileşimli alıştırmalarla.
               </p>
-              <ul className="mt-4 space-y-2 text-sm text-black/80">
+              <ul className="mt-5 space-y-3 text-lg text-black/80">
                 <li>• Görsel destekli kelime çalışmaları</li>
                 <li>• Sesli telaffuz alıştırmaları</li>
                 <li>• Günlük tekrar planı</li>
@@ -103,12 +103,12 @@ export default function Page() {
               <img
                 src="/english.gif"
                 alt="Temel İngilizce çalışma örneği"
-                className="mt-4 mx-auto w-full max-w-[260px] md:max-w-[320px] rounded-3xl border border-black/10 shadow-sm"
+                className="mt-5 mx-auto w-full max-w-[260px] md:max-w-[320px] rounded-3xl border border-black/10 shadow-sm"
                 loading="lazy"
               />
               <Link
                 href="/ing-ornek"
-                className="mt-5 inline-block text-sm font-semibold text-emerald-700 hover:text-emerald-800"
+                className="mt-6 inline-block text-lg font-semibold text-emerald-700 hover:text-emerald-800"
               >
                 Ünite Örneği
               </Link>
@@ -122,21 +122,21 @@ export default function Page() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid items-center gap-6 rounded-2xl border border-black/10 bg-gradient-to-r from-cyan-50 to-violet-50 p-6 md:grid-cols-2">
             <div>
-              <h2 className="text-xl font-semibold">Bugün başlayın</h2>
-              <p className="mt-2 text-black/70">
+              <h2 className="text-3xl font-semibold">Bugün başlayın</h2>
+              <p className="mt-4 text-xl text-black/70">
                 İlk hafta ücretsiz. Kayıt sonrası seviye belirleme testi ile
                 kişisel planınız oluşturulur.
               </p>
-              <div className="mt-4 flex flex-wrap items-center gap-3">
+              <div className="mt-5 flex flex-wrap items-center gap-3">
                 <Link
                   href="/kayit"
-                  className="rounded-full bg-black px-5 py-3 text-sm font-semibold text-white hover:bg-black/90"
+                  className="rounded-full bg-black px-6 py-4 text-lg font-semibold text-white hover:bg-black/90"
                 >
                   Ücretsiz Dene
                 </Link>
                 <Link
                   href="/"
-                  className="rounded-full border border-black/10 px-5 py-3 text-sm font-semibold hover:border-black/30"
+                  className="rounded-full border border-black/10 px-6 py-4 text-lg font-semibold hover:border-black/30"
                 >
                   Ana Sayfa
                 </Link>
@@ -144,20 +144,20 @@ export default function Page() {
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div className="rounded-xl border border-black/10 bg-white p-4">
-                <p className="text-xs text-black/60">Günlük</p>
-                <p className="text-sm font-semibold">15 dk</p>
+                <p className="text-base text-black/60">Günlük</p>
+                <p className="text-lg font-semibold">15 dk</p>
               </div>
               <div className="rounded-xl border border-black/10 bg-white p-4">
-                <p className="text-xs text-black/60">İlerleme</p>
-                <p className="text-sm font-semibold">Haftalık rapor</p>
+                <p className="text-base text-black/60">İlerleme</p>
+                <p className="text-lg font-semibold">Haftalık rapor</p>
               </div>
               <div className="rounded-xl border border-black/10 bg-white p-4">
-                <p className="text-xs text-black/60">Cihaz</p>
-                <p className="text-sm font-semibold">Web + Mobil</p>
+                <p className="text-base text-black/60">Cihaz</p>
+                <p className="text-lg font-semibold">Web + Mobil</p>
               </div>
               <div className="rounded-xl border border-black/10 bg-white p-4">
-                <p className="text-xs text-black/60">Destek</p>
-                <p className="text-sm font-semibold">Ebeveyn rehberi</p>
+                <p className="text-base text-black/60">Destek</p>
+                <p className="text-lg font-semibold">Ebeveyn rehberi</p>
               </div>
             </div>
           </div>
