@@ -112,50 +112,59 @@ export default function Header() {
       </div>
 
       {/* Mobile menu */}
-      {isOpen && (
-        <div className="border-t border-black/10 md:hidden">
-          <div className="mx-auto max-w-7xl px-4 py-3">
-            <nav className="flex flex-col gap-2">
-              <Link
-                href="/sayfalar/kurslar"
-                className="rounded-md px-2 py-2 text-base font-medium hover:bg-orange-50"
-              >
-                Kurslar
-              </Link>
-              <Link
-                href="/sayfalar/hakkimizda"
-                className="rounded-md px-2 py-2 text-base font-medium hover:bg-orange-50"
-              >
-                Hakkımızda
-              </Link>
-              <Link
-                href="/sayfalar/programlar"
-                className="rounded-md px-2 py-2 text-base font-medium hover:bg-orange-50"
-              >
-                Eğitim Programlarımız
-              </Link>
-              <Link
-                href="/sayfalar/ekstra-paketler"
-                className="rounded-md px-2 py-2 text-base font-medium hover:bg-orange-50"
-              >
-                Paketlerimiz
-              </Link>
-              <Link
-                href="/sayfalar/iletisim"
-                className="rounded-md px-2 py-2 text-base font-medium hover:bg-orange-50"
-              >
-                İletişim
-              </Link>
-              <Link
-                href="/platform"
-                className="mt-2 rounded-md bg-gradient-to-r from-orange-600 to-rose-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:from-orange-700 hover:to-rose-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-300"
-              >
-                Platforma Giriş
-              </Link>
-            </nav>
-          </div>
+      <div
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-out ${
+          isOpen
+            ? "border-t border-black/10 max-h-[480px] opacity-100 pointer-events-auto"
+            : "border-t border-transparent max-h-0 opacity-0 pointer-events-none"
+        }`}
+        aria-hidden={!isOpen}
+      >
+        <div
+          className={`mx-auto max-w-7xl px-4 transition-[padding] duration-300 ease-out ${
+            isOpen ? "py-3" : "py-0"
+          }`}
+        >
+          <nav className="flex flex-col gap-2">
+            <Link
+              href="/sayfalar/kurslar"
+              className="rounded-md px-2 py-2 text-base font-medium hover:bg-orange-50"
+            >
+              Kurslar
+            </Link>
+            <Link
+              href="/sayfalar/hakkimizda"
+              className="rounded-md px-2 py-2 text-base font-medium hover:bg-orange-50"
+            >
+              Hakkımızda
+            </Link>
+            <Link
+              href="/sayfalar/programlar"
+              className="rounded-md px-2 py-2 text-base font-medium hover:bg-orange-50"
+            >
+              Eğitim Programlarımız
+            </Link>
+            <Link
+              href="/sayfalar/ekstra-paketler"
+              className="rounded-md px-2 py-2 text-base font-medium hover:bg-orange-50"
+            >
+              Paketlerimiz
+            </Link>
+            <Link
+              href="/sayfalar/iletisim"
+              className="rounded-md px-2 py-2 text-base font-medium hover:bg-orange-50"
+            >
+              İletişim
+            </Link>
+            <Link
+              href="/platform"
+              className="mt-2 rounded-md bg-gradient-to-r from-orange-600 to-rose-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:from-orange-700 hover:to-rose-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-300"
+            >
+              Platforma Giriş
+            </Link>
+          </nav>
         </div>
-      )}
+      </div>
     </header>
   );
 }
