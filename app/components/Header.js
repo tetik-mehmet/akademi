@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -8,13 +8,31 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Scroll effect
+  // Scroll effect - useCallback ile optimize edildi
+  const handleScroll = useCallback(() => {
+    setIsScrolled(window.scrollY > 20);
+  }, []);
+
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
+
+  // Navigasyon linkleri useMemo ile optimize edildi
+  const navigationItems = useMemo(
+    () => [
+      { href: "/sayfalar/kurslar", label: "Kurslar" },
+      { href: "/sayfalar/hakkimizda", label: "Hakkımızda" },
+      { href: "/sayfalar/programlar", label: "Eğitim Programlarımız" },
+      { href: "/sayfalar/ekstra-paketler", label: "Paketlerimiz" },
+      { href: "/sayfalar/iletisim", label: "İletişim" },
+    ],
+    []
+  );
+
+  // Toggle fonksiyonu useCallback ile optimize edildi
+  const toggleMenu = useCallback(() => {
+    setIsOpen((v) => !v);
   }, []);
 
   return (
@@ -58,6 +76,7 @@ export default function Header() {
                 className={`transition-all duration-300 group-hover:scale-110 ${
                   isScrolled ? "h-12 w-12" : "h-14 w-14"
                 }`}
+                priority
               />
               {/* Logo glow effect */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-orange-400/20 to-rose-400/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -84,13 +103,7 @@ export default function Header() {
 
           {/* Enhanced Desktop Navigation */}
           <nav className="hidden items-center gap-1 xl:flex">
-            {[
-              { href: "/sayfalar/kurslar", label: "Kurslar" },
-              { href: "/sayfalar/hakkimizda", label: "Hakkımızda" },
-              { href: "/sayfalar/programlar", label: "Eğitim Programlarımız" },
-              { href: "/sayfalar/ekstra-paketler", label: "Paketlerimiz" },
-              { href: "/sayfalar/iletisim", label: "İletişim" },
-            ].map((item) => (
+            {navigationItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -127,7 +140,7 @@ export default function Header() {
           <button
             aria-label="Menüyü Aç/Kapat"
             className="inline-flex items-center justify-center rounded-xl border border-black/10 p-2.5 md:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-300 hover:bg-orange-50 transition-all duration-200"
-            onClick={() => setIsOpen((v) => !v)}
+            onClick={toggleMenu}
             aria-expanded={isOpen}
           >
             <div className="relative w-6 h-6">
@@ -209,30 +222,13 @@ export default function Header() {
         >
           {/* Mobile Navigation */}
           <nav className="flex flex-col gap-1">
-            {[
-              { href: "/sayfalar/kurslar", label: "Kurslar", icon: "📚" },
-              { href: "/sayfalar/hakkimizda", label: "Hakkımızda", icon: "🏢" },
-              {
-                href: "/sayfalar/programlar",
-                label: "Eğitim Programlarımız",
-                icon: "🎯",
-              },
-              {
-                href: "/sayfalar/ekstra-paketler",
-                label: "Paketlerimiz",
-                icon: "📦",
-              },
-              { href: "/sayfalar/iletisim", label: "İletişim", icon: "📞" },
-            ].map((item, index) => (
+            {navigationItems.map((item, index) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="flex items-center gap-3 rounded-xl px-4 py-3 text-base font-medium text-black/70 hover:bg-orange-50 hover:text-orange-700 transition-all duration-200 group"
+                className="rounded-xl px-4 py-3 text-base font-medium text-black/70 hover:bg-orange-50 hover:text-orange-700 transition-all duration-200 group"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <span className="text-lg opacity-60 group-hover:opacity-100 transition-opacity duration-200">
-                  {item.icon}
-                </span>
                 {item.label}
               </Link>
             ))}

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { useMemo } from "react";
 
 export default function Home() {
   const address = "Bağlıca Mahallesi Hilal Caddesi 13/2 Etimesgut/ANKARA";
@@ -7,44 +8,88 @@ export default function Home() {
     "https://wa.me/905443177895?text=Merhaba%20Tega%20Akademi%2C%20bilgi%20almak%20istiyorum.";
   const mapsEmbedSrc =
     "https://www.google.com/maps?q=Ba%C4%9Fl%C4%B1ca%20Mahallesi%20Hilal%20Caddesi%2013%2F2%20Etimesgut%2FANKARA&hl=tr&z=16&output=embed";
-  const reviews = [
-    {
-      text: "Kızımın okuma hızı gözle görülür şekilde arttı. Günlük 15 dakika ile bile çok fayda sağladık.",
-      author: "— Ayşe K., 9 yaş velisi",
-    },
-    {
-      text: "Odak egzersizleri ödev saatlerini çok daha verimli hale getirdi. Tavsiye ederim.",
-      author: "— Mehmet T., 12 yaş velisi",
-    },
-    {
-      text: "Platform çok anlaşılır ve eğlenceli, çocuğum her gün kendi kendine açıyor.",
-      author: "— Selin A., 10 yaş velisi",
-    },
-    {
-      text: "Haftalık raporlar sayesinde gelişimi net görüyoruz. Motivasyonu da arttı.",
-      author: "— Murat Y., 13 yaş velisi",
-    },
-    {
-      text: "MOXO testi ve takip görüşmeleri çok faydalı oldu. Odaklanması belirgin şekilde iyileşti.",
-      author: "— Derya B., 11 yaş velisi",
-    },
-    {
-      text: "İngilizce kelime tekrarları telaffuzunu belirgin şekilde geliştirdi.",
-      author: "— Gökhan S., 14 yaş velisi",
-    },
-    {
-      text: "Bireysel ders + platform kombinasyonu çocuğumuza çok iyi geldi.",
-      author: "— Elif D., 8 yaş velisi",
-    },
-    {
-      text: "Öğretmenlerden düzenli geri bildirim almak bizi çok rahatlattı.",
-      author: "— Cenk Ö., 15 yaş velisi",
-    },
-  ];
-  const selectedReviews = reviews
-    .slice()
-    .sort(() => 0.5 - Math.random())
-    .slice(0, 3);
+
+  // Reviews useMemo ile optimize edildi
+  const reviews = useMemo(
+    () => [
+      {
+        text: "Kızımın okuma hızı gözle görülür şekilde arttı. Günlük 15 dakika ile bile çok fayda sağladık.",
+        author: "— Ayşe K., 9 yaş velisi",
+      },
+      {
+        text: "Odak egzersizleri ödev saatlerini çok daha verimli hale getirdi. Tavsiye ederim.",
+        author: "— Mehmet T., 12 yaş velisi",
+      },
+      {
+        text: "Platform çok anlaşılır ve eğlenceli, çocuğum her gün kendi kendine açıyor.",
+        author: "— Selin A., 10 yaş velisi",
+      },
+      {
+        text: "Haftalık raporlar sayesinde gelişimi net görüyoruz. Motivasyonu da arttı.",
+        author: "— Murat Y., 13 yaş velisi",
+      },
+      {
+        text: "MOXO testi ve takip görüşmeleri çok faydalı oldu. Odaklanması belirgin şekilde iyileşti.",
+        author: "— Derya B., 11 yaş velisi",
+      },
+      {
+        text: "İngilizce kelime tekrarları telaffuzunu belirgin şekilde geliştirdi.",
+        author: "— Gökhan S., 14 yaş velisi",
+      },
+      {
+        text: "Bireysel ders + platform kombinasyonu çocuğumuza çok iyi geldi.",
+        author: "— Elif D., 8 yaş velisi",
+      },
+      {
+        text: "Öğretmenlerden düzenli geri bildirim almak bizi çok rahatlattı.",
+        author: "— Cenk Ö., 15 yaş velisi",
+      },
+    ],
+    []
+  );
+
+  // Selected reviews useMemo ile optimize edildi
+  const selectedReviews = useMemo(
+    () =>
+      reviews
+        .slice()
+        .sort(() => 0.5 - Math.random())
+        .slice(0, 3),
+    [reviews]
+  );
+
+  // Yaş grupları useMemo ile optimize edildi
+  const ageGroups = useMemo(
+    () => [
+      {
+        title: "6–10 Yaş",
+        desc: "Okuma temelleri",
+        emoji: "📚",
+        features: ["Temel okuma becerileri", "Görsel hafıza", "Konsantrasyon"],
+        color: "from-blue-500 to-cyan-500",
+      },
+      {
+        title: "11–14 Yaş",
+        desc: "Hız & Anlama",
+        emoji: "⚡",
+        features: [
+          "Hızlı okuma teknikleri",
+          "Kavrama geliştirme",
+          "Analiz becerileri",
+        ],
+        color: "from-orange-500 to-amber-500",
+      },
+      {
+        title: "15–17 Yaş",
+        desc: "Sınav ve odak",
+        emoji: "🎯",
+        features: ["Sınav stratejileri", "Zaman yönetimi", "Kritik düşünme"],
+        color: "from-rose-500 to-pink-500",
+      },
+    ],
+    []
+  );
+
   return (
     <main className="min-h-screen">
       {/* Hero */}
@@ -59,6 +104,7 @@ export default function Home() {
                 width={220}
                 height={220}
                 className="h-44 w-auto rounded-3xl"
+                priority
               />
             </div>
             <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-orange-600/20 bg-orange-50 px-3 py-1 text-sm font-medium text-orange-700">
@@ -107,6 +153,7 @@ export default function Home() {
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
                 aria-hidden
+                priority
               />
               <div className="absolute inset-0 bg-black/20" aria-hidden></div>
               <div className="relative z-10">
@@ -205,46 +252,13 @@ export default function Home() {
               height={300}
               alt="Kitap okuyan çocuk"
               className="w-full max-w-[700px] h-auto rounded-xl object-contain shadow-sm md:max-w-[780px]"
+              priority
             />
           </div>
 
           {/* Optimize edilmiş 3 kart grid sistemi */}
           <div className="mt-8 grid gap-6 sm:grid-cols-1 md:grid-cols-3 max-w-5xl mx-auto">
-            {[
-              {
-                title: "6–10 Yaş",
-                desc: "Okuma temelleri",
-                emoji: "📚",
-                features: [
-                  "Temel okuma becerileri",
-                  "Görsel hafıza",
-                  "Konsantrasyon",
-                ],
-                color: "from-blue-500 to-cyan-500",
-              },
-              {
-                title: "11–14 Yaş",
-                desc: "Hız & Anlama",
-                emoji: "⚡",
-                features: [
-                  "Hızlı okuma teknikleri",
-                  "Kavrama geliştirme",
-                  "Analiz becerileri",
-                ],
-                color: "from-orange-500 to-amber-500",
-              },
-              {
-                title: "15–17 Yaş",
-                desc: "Sınav ve odak",
-                emoji: "🎯",
-                features: [
-                  "Sınav stratejileri",
-                  "Zaman yönetimi",
-                  "Kritik düşünme",
-                ],
-                color: "from-rose-500 to-pink-500",
-              },
-            ].map((a, i) => (
+            {ageGroups.map((a, i) => (
               <div
                 key={i}
                 className="group relative rounded-2xl border border-black/10 bg-white p-6 transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover:border-black/20"
@@ -562,7 +576,7 @@ export default function Home() {
                     className="rounded-xl border border-black/10 p-4"
                   >
                     <blockquote className="text-lg text-black/80">
-                      “{review.text}”
+                      &ldquo;{review.text}&rdquo;
                     </blockquote>
                     <figcaption className="mt-2 text-base text-black/50">
                       {review.author}
