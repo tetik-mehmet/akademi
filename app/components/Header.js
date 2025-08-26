@@ -24,7 +24,7 @@ export default function Header() {
       { href: "/sayfalar/kurslar", label: "Kurslar" },
       { href: "/sayfalar/hakkimizda", label: "Hakkımızda" },
       { href: "/sayfalar/programlar", label: "Eğitim Programlarımız" },
-      { href: "/sayfalar/ekstra-paketler", label: "Paketlerimiz" },
+      { href: "/sayfalar/paketler", label: "Paketlerimiz" },
       { href: "/sayfalar/iletisim", label: "İletişim" },
     ],
     []
