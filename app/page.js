@@ -127,49 +127,55 @@ export default function Home() {
     <main className="min-h-screen">
       {/* Sağ üst paylaşım ikonu ve menüsü */}
       <div className="fixed right-6 top-24 md:top-28 z-40" ref={shareRef}>
-        <button
-          aria-label="Paylaş"
-          onClick={() => setShareOpen((v) => !v)}
-          className="inline-flex items-center gap-2 h-12 px-4 rounded-full bg-white/90 backdrop-blur border border-black/10 shadow-md hover:shadow-lg transition focus:outline-none focus:ring-2 focus:ring-rose-300"
-        >
-          <Image
-            src="/upload-svgrepo-com.svg"
-            alt="Paylaş"
-            width={22}
-            height={22}
-          />
-          <span className="text-sm font-medium text-gray-800">Beni Paylaş</span>
-        </button>
+        <div className="relative">
+          <button
+            aria-label="Paylaş"
+            onClick={() => setShareOpen((v) => !v)}
+            className="inline-flex items-center gap-2 h-12 px-4 rounded-full bg-white/90 backdrop-blur border border-black/10 shadow-md hover:shadow-lg transition focus:outline-none focus:ring-2 focus:ring-rose-300"
+          >
+            <Image
+              src="/upload-svgrepo-com.svg"
+              alt="Paylaş"
+              width={22}
+              height={22}
+            />
+            <span className="text-sm font-medium text-gray-800">
+              Beni Paylaş
+            </span>
+          </button>
 
-        {shareOpen && (
-          <div className="mt-2 w-56 rounded-xl border border-black/10 bg-white p-2 shadow-xl animate-in fade-in zoom-in-95">
-            <p className="px-2 py-1 text-sm text-black/60">Paylaşım seçin</p>
-            <button
-              onClick={handleWhatsAppShare}
-              className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left hover:bg-orange-50"
-            >
-              <Image
-                src="/whatsapp.svg"
-                alt="WhatsApp"
-                width={20}
-                height={20}
-              />
-              <span className="text-sm font-medium">WhatsApp ile paylaş</span>
-            </button>
-            <button
-              onClick={handleInstagramShare}
-              className="mt-1 flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left hover:bg-rose-50"
-            >
-              <Image
-                src="/instagram.svg"
-                alt="Instagram"
-                width={20}
-                height={20}
-              />
-              <span className="text-sm font-medium">Instagram ile paylaş</span>
-            </button>
-          </div>
-        )}
+          {shareOpen && (
+            <div className="absolute right-0 top-full mt-2 w-56 rounded-xl border border-black/10 bg-white p-2 shadow-xl animate-in fade-in zoom-in-95">
+              <p className="px-2 py-1 text-sm text-black/60">Paylaşım seçin</p>
+              <button
+                onClick={handleWhatsAppShare}
+                className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left hover:bg-orange-50"
+              >
+                <Image
+                  src="/whatsapp.svg"
+                  alt="WhatsApp"
+                  width={20}
+                  height={20}
+                />
+                <span className="text-sm font-medium">WhatsApp ile paylaş</span>
+              </button>
+              <button
+                onClick={handleInstagramShare}
+                className="mt-1 flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left hover:bg-rose-50"
+              >
+                <Image
+                  src="/instagram.svg"
+                  alt="Instagram"
+                  width={20}
+                  height={20}
+                />
+                <span className="text-sm font-medium">
+                  Instagram ile paylaş
+                </span>
+              </button>
+            </div>
+          )}
+        </div>
       </div>
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-b from-orange-50/70 via-rose-50/50 to-transparent">
