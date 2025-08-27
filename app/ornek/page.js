@@ -53,6 +53,10 @@ export default function StroopPage() {
   const [best, setBest] = useState(0);
   const containerRef = useRef(null);
 
+  // Ses dosyaları için ref'ler
+  const correctAudioRef = useRef(null);
+  const wrongAudioRef = useRef(null);
+
   useEffect(() => {
     try {
       const saved = localStorage.getItem("stroop_best");
@@ -146,8 +150,18 @@ export default function StroopPage() {
         setScore((s) => s + 1);
         setCorrect((c) => c + 1);
         setFeedback("ok");
+        // Doğru cevap sesi çal
+        if (correctAudioRef.current) {
+          correctAudioRef.current.currentTime = 0;
+          correctAudioRef.current.play().catch(() => {});
+        }
       } else {
         setFeedback("no");
+        // Yanlış cevap sesi çal
+        if (wrongAudioRef.current) {
+          wrongAudioRef.current.currentTime = 0;
+          wrongAudioRef.current.play().catch(() => {});
+        }
       }
       // Kısa görsel geri bildirim
       setTimeout(() => setFeedback(null), 180);
@@ -158,6 +172,10 @@ export default function StroopPage() {
 
   return (
     <main className="mx-auto max-w-4xl px-4 py-10">
+      {/* Ses dosyaları için gizli audio elementleri */}
+      <audio ref={correctAudioRef} src="/true.mp3" preload="auto" />
+      <audio ref={wrongAudioRef} src="/wrong.mp3" preload="auto" />
+
       <section className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <h1 className="text-xl font-bold">
